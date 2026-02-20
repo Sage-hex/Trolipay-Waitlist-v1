@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
+  BarChart3,
   ClipboardCheck,
   Route,
   ShieldCheck,
@@ -81,8 +82,8 @@ const steps = [
 
 const pillars = [
   'Chat is where demand already lives. Trolipay converts chat interactions into durable, payable order objects.',
-  'This is not a chatbot gimmick and not just payment links. It is a commerce engine with payment truth.',
-  'Merchants get operational clarity: deterministic totals, reliable status, and receipt-backed trust.',
+  'Not a chatbot gimmick and not just payment links. Trolipay is a commerce engine with payment truth.',
+  'Merchants gain deterministic totals, verifiable status, and receipt-backed customer trust at scale.',
 ]
 
 function scrollToSection(sectionId) {
@@ -92,21 +93,24 @@ function scrollToSection(sectionId) {
   }
 }
 
+const fadeUp = {
+  initial: { opacity: 0, y: 10 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.18, ease: 'easeOut' },
+}
+
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(15,23,42,0.16),transparent_33%),radial-gradient(circle_at_85%_5%,rgba(4,120,87,0.18),transparent_38%),radial-gradient(circle_at_50%_90%,rgba(15,23,42,0.08),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(15,23,42,0.16),transparent_33%),radial-gradient(circle_at_85%_5%,rgba(4,120,87,0.18),transparent_38%),radial-gradient(circle_at_50%_90%,rgba(15,23,42,0.10),transparent_40%)]" />
 
       <div className="relative">
         <LandingNavbar />
 
         <Section className="pb-10 pt-12 md:pt-20">
           <div className="grid items-center gap-10 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.18, ease: 'easeOut' }}
-            >
+            <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.18, ease: 'easeOut' }}>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-brand-accent shadow-sm">
                 <Sparkles className="h-3.5 w-3.5" />
                 Investor-grade chat commerce infrastructure
@@ -115,8 +119,7 @@ export default function WaitlistLanding() {
                 Turn WhatsApp/Telegram DMs into verified, paid orders.
               </h1>
               <p className="mt-4 text-sm text-text-muted md:text-base">
-                Trolipay gives merchants payment truth, deterministic totals, and receipt-backed confidence—without
-                forcing customers to leave chat.
+                Trolipay gives merchants payment truth, deterministic totals, and receipt-backed confidence—without forcing customers to leave chat.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button onClick={() => scrollToSection('waitlist')}>Join the waitlist</Button>
@@ -124,36 +127,18 @@ export default function WaitlistLanding() {
                   Request a demo
                 </Button>
               </div>
-              <div className="mt-7 grid gap-3 text-xs text-text-muted sm:grid-cols-2">
-                <div className="rounded-lg border border-border bg-card-bg p-3 shadow-sm">
-                  <p className="font-semibold text-brand-primary">No manual mark-paid</p>
-                  <p className="mt-1">Paid status is webhook-verified and auditable.</p>
-                </div>
-                <div className="rounded-lg border border-border bg-card-bg p-3 shadow-sm">
-                  <p className="font-semibold text-brand-primary">Built for scale</p>
-                  <p className="mt-1">From 10 to 100+ orders/day with operational clarity.</p>
-                </div>
-              </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-            >
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
               <Card className="overflow-hidden border-brand-primary/10 p-3">
-                <img
-                  src="/images/hero-dashboard.svg"
-                  alt="Premium Trolipay admin dashboard preview"
-                  className="h-auto w-full rounded-lg border border-border object-cover"
-                />
+                <img src="/images/hero-dashboard.svg" alt="Premium Trolipay admin dashboard preview" className="h-auto w-full rounded-lg border border-border object-cover" />
               </Card>
             </motion.div>
           </div>
         </Section>
 
         <Section className="py-0">
-          <div className="rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
+          <motion.div {...fadeUp} className="rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
             <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-xl bg-white/5 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Problem</p>
@@ -168,11 +153,11 @@ export default function WaitlistLanding() {
                 <p className="mt-1 text-sm text-slate-100">Less fraud exposure, faster confirmation, and premium buyer trust.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Section>
 
         <Section>
-          <div className="rounded-2xl border border-border bg-card-bg p-6 shadow-sm">
+          <motion.div {...fadeUp} className="rounded-2xl border border-border bg-card-bg p-6 shadow-sm">
             <div className="flex items-center gap-2 text-brand-accent">
               <WalletCards className="h-4 w-4" />
               <p className="text-sm font-medium">What Trolipay is</p>
@@ -184,14 +169,31 @@ export default function WaitlistLanding() {
                 </p>
               ))}
             </div>
+          </motion.div>
+        </Section>
+
+        <Section>
+          <div className="grid gap-6 md:grid-cols-2">
+            <motion.div {...fadeUp}>
+              <Card className="overflow-hidden p-3">
+                <img src="/images/investor-metrics.svg" alt="Investor metrics style dashboard visual" className="w-full rounded-lg border border-border" />
+              </Card>
+            </motion.div>
+            <motion.div {...fadeUp}>
+              <Card className="overflow-hidden p-3">
+                <img src="/images/trust-architecture.svg" alt="Trust architecture visual" className="w-full rounded-lg border border-border" />
+              </Card>
+            </motion.div>
           </div>
         </Section>
 
         <Section>
           <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">Everything your ops team needs</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <FeatureCard key={feature.title} title={feature.title} description={feature.description} />
+            {features.map((feature, idx) => (
+              <motion.div key={feature.title} {...fadeUp} transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.02 }}>
+                <FeatureCard title={feature.title} description={feature.description} />
+              </motion.div>
             ))}
           </div>
         </Section>
@@ -202,11 +204,13 @@ export default function WaitlistLanding() {
               <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">How it works</h2>
               <p className="mt-2 text-sm text-text-muted">From chat command to verified payment to receipt-backed fulfillment.</p>
               <div className="mt-6 space-y-4">
-                {steps.map((step) => {
+                {steps.map((step, idx) => {
                   const Icon = step.icon
                   return (
-                    <article
+                    <motion.article
                       key={step.title}
+                      {...fadeUp}
+                      transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.03 }}
                       className="rounded-xl border border-border bg-card-bg p-6 shadow-sm transition duration-150 ease-out hover:shadow-md"
                     >
                       <div className="flex items-center gap-3">
@@ -215,26 +219,30 @@ export default function WaitlistLanding() {
                       </div>
                       <h3 className="mt-3 text-lg font-semibold text-brand-primary">{step.title}</h3>
                       <p className="mt-2 text-sm text-text-muted">{step.description}</p>
-                    </article>
+                    </motion.article>
                   )
                 })}
               </div>
             </div>
-            <Card className="p-3">
-              <img
-                src="/images/commerce-flow.svg"
-                alt="Commerce process flow visualization"
-                className="w-full rounded-lg border border-border"
-              />
-            </Card>
+            <motion.div {...fadeUp}>
+              <Card className="p-3">
+                <img src="/images/commerce-flow.svg" alt="Commerce process flow visualization" className="w-full rounded-lg border border-border" />
+              </Card>
+            </motion.div>
           </div>
         </Section>
 
         <Section>
+          <div className="mb-3 flex items-center gap-2 text-brand-accent">
+            <BarChart3 className="h-4 w-4" />
+            <p className="text-sm font-medium">Investor confidence signals</p>
+          </div>
           <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">What teams are saying</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.role} quote={testimonial.quote} role={testimonial.role} />
+            {testimonials.map((testimonial, idx) => (
+              <motion.div key={testimonial.role} {...fadeUp} transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.03 }}>
+                <TestimonialCard quote={testimonial.quote} role={testimonial.role} />
+              </motion.div>
             ))}
           </div>
         </Section>
@@ -247,7 +255,7 @@ export default function WaitlistLanding() {
         </Section>
 
         <Section id="waitlist">
-          <div className="max-w-2xl">
+          <motion.div {...fadeUp} className="max-w-2xl">
             <div className="mb-5 flex items-center gap-2 text-brand-accent">
               <ArrowUpRight className="h-4 w-4" />
               <p className="text-sm font-medium">Join the waitlist</p>
@@ -257,13 +265,13 @@ export default function WaitlistLanding() {
             <div className="mt-6">
               <WaitlistForm intent="waitlist" />
             </div>
-          </div>
+          </motion.div>
         </Section>
 
         <Section id="demo" className="pt-0">
-          <div className="max-w-2xl">
+          <motion.div {...fadeUp} className="max-w-2xl">
             <div className="mb-5 flex items-center gap-2 text-brand-accent">
-              <ArrowUpRight className="h-4 w-4" />
+              <BadgeCheck className="h-4 w-4" />
               <p className="text-sm font-medium">Request a demo</p>
             </div>
             <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">See exactly how Trolipay fits your operations</h2>
@@ -271,7 +279,7 @@ export default function WaitlistLanding() {
             <div className="mt-6">
               <WaitlistForm intent="demo" />
             </div>
-          </div>
+          </motion.div>
         </Section>
 
         <LandingFooter />

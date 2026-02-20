@@ -1,6 +1,6 @@
-# Trolipay Landing — Color & Visual Communication Guide
+# Trolipay Landing — Color, Motion, and Investor Communication Guide
 
-## 1) Core Brand Palette (from spec tokens)
+## 1) Core Brand Palette (locked spec tokens)
 
 - `brand-primary` — `#0F172A` (Infrastructure Slate)
 - `brand-accent` — `#047857` (Muted Emerald)
@@ -10,34 +10,45 @@
 - `text` — `#111827`
 - `text-muted` — `#6B7280`
 
-## 2) How the premium look is achieved
+## 2) Premium visual strategy used
 
-The page stays token-compliant but uses stronger composition:
+The redesign keeps token compliance and improves investor perception by composition:
 
-- Layered background treatment with subtle radial blends using brand-primary + brand-accent alpha values.
-- High-contrast hero typography over soft gradients.
-- Premium card rhythm: `rounded-xl border border-border bg-card-bg shadow-sm p-6`.
-- Dark trust strip using `bg-brand-primary` with soft inset cards.
-- Accent-driven iconography (`text-brand-accent`) for directional emphasis.
+- Multi-layer radial background field using `brand-primary` and `brand-accent` alpha overlays.
+- Alternating contrast blocks (light cards + dark trust strip) to create premium rhythm.
+- High-density information cards with restrained shadows and precise spacing.
+- Branded visuals in hero, architecture, and metrics sections.
 
-## 3) Usage map in the landing
+## 3) Motion system (calm, premium)
 
-- Primary narrative + CTA emphasis: `text-brand-primary`, `bg-brand-primary`, `text-white`
-- Interaction highlights + trust indicators: `text-brand-accent`, `ring-brand-accent`
-- Surface consistency: `bg-app-bg`, `bg-card-bg`, `border-border`
-- Readability hierarchy: `text-text`, `text-text-muted`
+All motion follows restrained rules:
 
-## 4) Messaging guide used in the redesign
+- Duration: `0.18s`–`0.20s`
+- Easing: `easeOut`
+- No spring/bounce
+- Pattern: subtle fade-up on section entry and card cascades only
 
-The landing now communicates Trolipay in investor-ready language:
+## 4) Communication architecture (investor-facing)
 
-- Problem: chat-native sales without a commerce system lead to operational leakage and payment uncertainty.
-- Solution: Trolipay is the infrastructure layer that turns chat demand into verifiable orders.
-- Outcome: deterministic totals, webhook payment truth, and receipt-backed trust.
+Messaging order implemented on the page:
 
-## 5) Copy principles applied
+1. Category statement (investor-grade chat commerce infrastructure)
+2. Core value proposition (verified paid orders from chat)
+3. Problem/Solution/Outcome block
+4. “What Trolipay is” explanation pillars
+5. Mechanism proof (how-it-works + architecture visuals)
+6. Social validation + FAQ + CTA conversion blocks
 
-- Short, high-clarity statements.
-- Operational language over hype language.
-- Distinct sections for problem, solution, and mechanism.
-- Retained dual CTA flow: waitlist + demo.
+## 5) Asset set used
+
+- `/images/hero-dashboard.svg`
+- `/images/commerce-flow.svg`
+- `/images/investor-metrics.svg`
+- `/images/trust-architecture.svg`
+
+## 6) Brand usage map
+
+- Primary confidence surfaces: `bg-brand-primary`, `text-white`
+- Action + trust highlights: `text-brand-accent`, `ring-brand-accent`
+- Premium surfaces: `bg-card-bg`, `border-border`, `shadow-sm`
+- Hierarchy text: `text-brand-primary` for titles, `text-text-muted` for support copy
