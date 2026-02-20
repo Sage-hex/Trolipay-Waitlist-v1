@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0F172A;
+  --color-brand-accent: #047857;
+
+  --color-app-bg: #F8FAFC;
+  --color-card-bg: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  --color-text: #111827;
+  --color-text-muted: #6B7280;
+}
+
+:root {
+  color: var(--color-text);
+  background-color: var(--color-app-bg);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-app-bg);
+}
+
+
+.depth-3d {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 14px 30px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.depth-3d-soft {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
