@@ -10,34 +10,38 @@
 - `text` — `#111827`
 - `text-muted` — `#6B7280`
 
-## 2) Premium visual strategy used
+## 2) Premium investor visual strategy
 
-The redesign keeps token compliance and improves investor perception by composition:
+This version is intentionally higher-contrast and more cinematic while remaining token-safe:
 
-- Multi-layer radial background field using `brand-primary` and `brand-accent` alpha overlays.
-- Alternating contrast blocks (light cards + dark trust strip) to create premium rhythm.
-- High-density information cards with restrained shadows and precise spacing.
-- Branded visuals in hero, architecture, and metrics sections.
+- Deep trust surfaces: `bg-brand-primary` blocks for strategic narrative sections.
+- Premium glow field: layered radial overlays using alpha blends of brand-primary and brand-accent.
+- Executive hierarchy: gradient-emphasized headline focus for high-signal messaging moments.
+- Dense proof layout: image-supported architecture + metrics cards to reduce perceived marketing fluff.
 
-## 3) Motion system (calm, premium)
+## 3) Motion system (calm but visible)
 
-All motion follows restrained rules:
+All motion remains restrained and premium:
 
-- Duration: `0.18s`–`0.20s`
+- Duration: `0.18s` to `0.20s`
 - Easing: `easeOut`
-- No spring/bounce
-- Pattern: subtle fade-up on section entry and card cascades only
+- No spring, no bounce
+- Behaviors used:
+  - section fade-up on scroll
+  - subtle card hover lift (`y: -3` to `-4`)
+  - soft ambient background pulse
 
 ## 4) Communication architecture (investor-facing)
 
-Messaging order implemented on the page:
+Landing copy sequence is intentionally structured:
 
 1. Category statement (investor-grade chat commerce infrastructure)
 2. Core value proposition (verified paid orders from chat)
-3. Problem/Solution/Outcome block
+3. Problem / Solution / Outcome strip
 4. “What Trolipay is” explanation pillars
-5. Mechanism proof (how-it-works + architecture visuals)
-6. Social validation + FAQ + CTA conversion blocks
+5. Mechanism proof (features + workflow)
+6. Trust evidence (testimonials + FAQ)
+7. Conversion CTAs (waitlist + demo)
 
 ## 5) Asset set used
 
@@ -48,7 +52,7 @@ Messaging order implemented on the page:
 
 ## 6) Brand usage map
 
-- Primary confidence surfaces: `bg-brand-primary`, `text-white`
-- Action + trust highlights: `text-brand-accent`, `ring-brand-accent`
-- Premium surfaces: `bg-card-bg`, `border-border`, `shadow-sm`
-- Hierarchy text: `text-brand-primary` for titles, `text-text-muted` for support copy
+- Confidence surfaces: `bg-brand-primary`, `text-white`
+- Emphasis highlights: `text-brand-accent`, `ring-brand-accent`
+- Premium cards: `bg-card-bg border-border shadow-sm`
+- Readability hierarchy: `text-brand-primary` for titles, `text-text-muted` for support copy

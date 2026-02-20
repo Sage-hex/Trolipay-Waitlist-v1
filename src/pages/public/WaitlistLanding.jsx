@@ -96,14 +96,18 @@ function scrollToSection(sectionId) {
 const fadeUp = {
   initial: { opacity: 0, y: 10 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.3 },
+  viewport: { once: true, amount: 0.25 },
   transition: { duration: 0.18, ease: 'easeOut' },
 }
 
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(15,23,42,0.16),transparent_33%),radial-gradient(circle_at_85%_5%,rgba(4,120,87,0.18),transparent_38%),radial-gradient(circle_at_50%_90%,rgba(15,23,42,0.10),transparent_40%)]" />
+      <motion.div
+        animate={{ opacity: [0.75, 1, 0.75] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeOut' }}
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(15,23,42,0.2),transparent_34%),radial-gradient(circle_at_86%_8%,rgba(4,120,87,0.22),transparent_38%),radial-gradient(circle_at_50%_88%,rgba(15,23,42,0.12),transparent_40%)]"
+      />
 
       <div className="relative">
         <LandingNavbar />
@@ -115,8 +119,11 @@ export default function WaitlistLanding() {
                 <Sparkles className="h-3.5 w-3.5" />
                 Investor-grade chat commerce infrastructure
               </p>
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-brand-primary md:text-5xl">
-                Turn WhatsApp/Telegram DMs into verified, paid orders.
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
+                <span className="text-brand-primary">Turn WhatsApp/Telegram DMs into </span>
+                <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent">
+                  verified, paid orders.
+                </span>
               </h1>
               <p className="mt-4 text-sm text-text-muted md:text-base">
                 Trolipay gives merchants payment truth, deterministic totals, and receipt-backed confidence—without forcing customers to leave chat.
@@ -130,7 +137,7 @@ export default function WaitlistLanding() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
-              <Card className="overflow-hidden border-brand-primary/10 p-3">
+              <Card className="overflow-hidden border-brand-primary/20 p-3">
                 <img src="/images/hero-dashboard.svg" alt="Premium Trolipay admin dashboard preview" className="h-auto w-full rounded-lg border border-border object-cover" />
               </Card>
             </motion.div>
@@ -140,15 +147,15 @@ export default function WaitlistLanding() {
         <Section className="py-0">
           <motion.div {...fadeUp} className="rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-xl bg-white/5 p-4">
+              <div className="rounded-xl bg-white/8 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Problem</p>
                 <p className="mt-1 text-sm text-slate-100">Chat sells, but chat alone has no durable order lifecycle.</p>
               </div>
-              <div className="rounded-xl bg-white/5 p-4">
+              <div className="rounded-xl bg-white/8 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Solution</p>
                 <p className="mt-1 text-sm text-slate-100">Trolipay enforces payment truth and structured fulfillment flow.</p>
               </div>
-              <div className="rounded-xl bg-white/5 p-4">
+              <div className="rounded-xl bg-white/8 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Outcome</p>
                 <p className="mt-1 text-sm text-slate-100">Less fraud exposure, faster confirmation, and premium buyer trust.</p>
               </div>
@@ -164,7 +171,7 @@ export default function WaitlistLanding() {
             </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {pillars.map((item) => (
-                <p key={item} className="rounded-xl border border-border bg-app-bg p-4 text-sm text-text-muted">
+                <p key={item} className="rounded-xl border border-border bg-app-bg p-4 text-sm leading-relaxed text-text-muted">
                   {item}
                 </p>
               ))}
@@ -175,12 +182,12 @@ export default function WaitlistLanding() {
         <Section>
           <div className="grid gap-6 md:grid-cols-2">
             <motion.div {...fadeUp}>
-              <Card className="overflow-hidden p-3">
+              <Card className="overflow-hidden border-brand-primary/15 p-3">
                 <img src="/images/investor-metrics.svg" alt="Investor metrics style dashboard visual" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
             <motion.div {...fadeUp}>
-              <Card className="overflow-hidden p-3">
+              <Card className="overflow-hidden border-brand-primary/15 p-3">
                 <img src="/images/trust-architecture.svg" alt="Trust architecture visual" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
@@ -211,7 +218,7 @@ export default function WaitlistLanding() {
                       key={step.title}
                       {...fadeUp}
                       transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.03 }}
-                      className="rounded-xl border border-border bg-card-bg p-6 shadow-sm transition duration-150 ease-out hover:shadow-md"
+                      className="rounded-xl border border-border bg-card-bg p-6 shadow-sm"
                     >
                       <div className="flex items-center gap-3">
                         <Icon className="h-5 w-5 text-brand-accent" />
