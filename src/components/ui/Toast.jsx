@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-ka9wmo
 import { AlertTriangle, CircleCheck, CircleX, Info, X } from 'lucide-react'
-=======
-import { CircleCheck, CircleX, Info, X } from 'lucide-react'
->>>>>>> main
 import { dismissToast, subscribeToasts } from './toastStore'
 
 const toastTypes = {
@@ -16,13 +12,10 @@ const toastTypes = {
     icon: CircleX,
     style: 'border-red-200 bg-red-50 text-red-800',
   },
-<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-ka9wmo
   warning: {
     icon: AlertTriangle,
     style: 'border-amber-200 bg-amber-50 text-amber-800',
   },
-=======
->>>>>>> main
   info: {
     icon: Info,
     style: 'border-border bg-card-bg text-text',
