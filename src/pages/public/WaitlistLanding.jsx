@@ -86,13 +86,6 @@ const pillars = [
   'Merchants gain deterministic totals, verifiable status, and receipt-backed customer trust at scale.',
 ]
 
-function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
-
 const fadeUp = {
   initial: { opacity: 0, y: 10 },
   whileInView: { opacity: 1, y: 0 },
@@ -100,19 +93,22 @@ const fadeUp = {
   transition: { duration: 0.18, ease: 'easeOut' },
 }
 
+function scrollToSection(sectionId) {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
-      <motion.div
-        animate={{ opacity: [0.75, 1, 0.75] }}
-        transition={{ duration: 4, repeat: Infinity, ease: 'easeOut' }}
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(15,23,42,0.2),transparent_34%),radial-gradient(circle_at_86%_8%,rgba(4,120,87,0.22),transparent_38%),radial-gradient(circle_at_50%_88%,rgba(15,23,42,0.12),transparent_40%)]"
-      />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(15,23,42,0.14),transparent_36%),radial-gradient(circle_at_85%_8%,rgba(4,120,87,0.16),transparent_40%)]" />
 
       <div className="relative">
         <LandingNavbar />
 
-        <Section className="pb-10 pt-12 md:pt-20">
+        <Section className="pb-12 pt-12 md:pt-20">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.18, ease: 'easeOut' }}>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-brand-accent shadow-sm">
@@ -121,11 +117,9 @@ export default function WaitlistLanding() {
               </p>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
                 <span className="text-brand-primary">Turn WhatsApp/Telegram DMs into </span>
-                <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent">
-                  verified, paid orders.
-                </span>
+                <span className="bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary bg-clip-text text-transparent">verified, paid orders.</span>
               </h1>
-              <p className="mt-4 text-sm text-text-muted md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
                 Trolipay gives merchants payment truth, deterministic totals, and receipt-backed confidence—without forcing customers to leave chat.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -136,10 +130,17 @@ export default function WaitlistLanding() {
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: 'easeOut' }} className="relative">
               <Card className="overflow-hidden border-brand-primary/20 p-3">
                 <img src="/images/hero-dashboard.svg" alt="Premium Trolipay admin dashboard preview" className="h-auto w-full rounded-lg border border-border object-cover" />
               </Card>
+              <motion.div
+                {...fadeUp}
+                className="absolute -bottom-4 -left-4 hidden max-w-[230px] rounded-xl border border-border bg-card-bg p-4 shadow-sm md:block"
+              >
+                <p className="text-xs font-semibold text-brand-primary">Payment truth locked</p>
+                <p className="mt-1 text-xs text-text-muted">Webhook verification + idempotent state transition.</p>
+              </motion.div>
             </motion.div>
           </div>
         </Section>
@@ -147,15 +148,15 @@ export default function WaitlistLanding() {
         <Section className="py-0">
           <motion.div {...fadeUp} className="rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-xl bg-white/8 p-4">
+              <div className="rounded-xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Problem</p>
                 <p className="mt-1 text-sm text-slate-100">Chat sells, but chat alone has no durable order lifecycle.</p>
               </div>
-              <div className="rounded-xl bg-white/8 p-4">
+              <div className="rounded-xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Solution</p>
                 <p className="mt-1 text-sm text-slate-100">Trolipay enforces payment truth and structured fulfillment flow.</p>
               </div>
-              <div className="rounded-xl bg-white/8 p-4">
+              <div className="rounded-xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Outcome</p>
                 <p className="mt-1 text-sm text-slate-100">Less fraud exposure, faster confirmation, and premium buyer trust.</p>
               </div>
@@ -196,13 +197,19 @@ export default function WaitlistLanding() {
 
         <Section>
           <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">Everything your ops team needs</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, idx) => (
-              <motion.div key={feature.title} {...fadeUp} transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.02 }}>
+          <motion.div
+            className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ whileInView: { transition: { staggerChildren: 0.04 } } }}
+          >
+            {features.map((feature) => (
+              <motion.div key={feature.title} variants={{ initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 } }} transition={{ duration: 0.18, ease: 'easeOut' }}>
                 <FeatureCard title={feature.title} description={feature.description} />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </Section>
 
         <Section>
@@ -245,13 +252,19 @@ export default function WaitlistLanding() {
             <p className="text-sm font-medium">Investor confidence signals</p>
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-brand-primary">What teams are saying</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, idx) => (
-              <motion.div key={testimonial.role} {...fadeUp} transition={{ duration: 0.18, ease: 'easeOut', delay: idx * 0.03 }}>
+          <motion.div
+            className="mt-6 grid gap-6 md:grid-cols-3"
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{ whileInView: { transition: { staggerChildren: 0.05 } } }}
+          >
+            {testimonials.map((testimonial) => (
+              <motion.div key={testimonial.role} variants={{ initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 } }} transition={{ duration: 0.18, ease: 'easeOut' }}>
                 <TestimonialCard quote={testimonial.quote} role={testimonial.role} />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </Section>
 
         <Section>

@@ -15,7 +15,7 @@
 This version is intentionally higher-contrast and more cinematic while remaining token-safe:
 
 - Deep trust surfaces: `bg-brand-primary` blocks for strategic narrative sections.
-- Premium glow field: layered radial overlays using alpha blends of brand-primary and brand-accent.
+- Premium glow field: static layered radial overlays using alpha blends of brand-primary and brand-accent (no flicker loop).
 - Executive hierarchy: gradient-emphasized headline focus for high-signal messaging moments.
 - Dense proof layout: image-supported architecture + metrics cards to reduce perceived marketing fluff.
 
@@ -26,10 +26,11 @@ All motion remains restrained and premium:
 - Duration: `0.18s` to `0.20s`
 - Easing: `easeOut`
 - No spring, no bounce
+- No infinite opacity flicker on core surfaces
 - Behaviors used:
   - section fade-up on scroll
+  - staggered card entrances
   - subtle card hover lift (`y: -3` to `-4`)
-  - soft ambient background pulse
 
 ## 4) Communication architecture (investor-facing)
 
