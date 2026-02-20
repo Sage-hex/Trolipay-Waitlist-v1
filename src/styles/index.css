@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0F172A;
+  --color-brand-accent: #047857;
+
+  --color-app-bg: #F8FAFC;
+  --color-card-bg: #FFFFFF;
+  --color-border: #E5E7EB;
+
+  --color-text: #111827;
+  --color-text-muted: #6B7280;
+}
+
+:root {
+  color: var(--color-text);
+  background-color: var(--color-app-bg);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-app-bg);
+}
