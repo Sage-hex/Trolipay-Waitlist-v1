@@ -12,41 +12,36 @@
 
 ## 2) Premium investor visual strategy
 
-This version is intentionally higher-contrast and more cinematic while remaining token-safe:
+- Keep the page bright and premium (`bg-app-bg`) with a stable radial brand field in the background.
+- Use dark confidence blocks (`bg-brand-primary`) only where strategic contrast is needed.
+- Pair dashboard proof visuals with a dedicated chat-inbox visual so the value is explicit for busy SME chat operators.
+- Use premium cards with clean spacing and restrained depth (`rounded-xl border border-border bg-card-bg shadow-sm`).
 
-- Deep trust surfaces: `bg-brand-primary` blocks for strategic narrative sections.
-- Premium glow field: static layered radial overlays using alpha blends of brand-primary and brand-accent (no flicker loop).
-- Executive hierarchy: gradient-emphasized headline focus for high-signal messaging moments.
-- Dense proof layout: image-supported architecture + metrics cards to reduce perceived marketing fluff.
+## 3) Motion system (working + calm)
 
-## 3) Motion system (calm but visible)
-
-All motion remains restrained and premium:
-
-- Duration: `0.18s` to `0.20s`
+- Duration: `0.20s`
 - Easing: `easeOut`
 - No spring, no bounce
-- No infinite opacity flicker on core surfaces
-- Behaviors used:
-  - section fade-up on scroll
-  - staggered card entrances
-  - subtle card hover lift (`y: -3` to `-4`)
+- No flicker loops
+- Motion patterns:
+  - scroll reveal (`whileInView`) for sections
+  - staggered card reveals for feature/testimonial grids
+  - subtle hover-lift for feature/testimonial cards
 
 ## 4) Communication architecture (investor-facing)
-
-Landing copy sequence is intentionally structured:
 
 1. Category statement (investor-grade chat commerce infrastructure)
 2. Core value proposition (verified paid orders from chat)
 3. Problem / Solution / Outcome strip
-4. “What Trolipay is” explanation pillars
-5. Mechanism proof (features + workflow)
+4. “What Trolipay is” explanatory pillars
+5. Operational proof visuals (dashboard + chat inbox + architecture)
 6. Trust evidence (testimonials + FAQ)
 7. Conversion CTAs (waitlist + demo)
 
 ## 5) Asset set used
 
 - `/images/hero-dashboard.svg`
+- `/images/chat-inbox.svg`
 - `/images/commerce-flow.svg`
 - `/images/investor-metrics.svg`
 - `/images/trust-architecture.svg`
