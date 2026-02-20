@@ -34,7 +34,7 @@
 2. Core value proposition (verified paid orders from chat)
 3. Problem / Solution / Outcome strip
 4. “What Trolipay is” explanatory pillars
-5. Operational proof visuals (dashboard + chat inbox + architecture)
+5. Operational proof visuals (dashboard + live chat conversation + receipt proof)
 6. Trust evidence (testimonials + FAQ)
 7. Conversion CTAs (waitlist + demo)
 
@@ -45,6 +45,8 @@
 - `/images/commerce-flow.svg`
 - `/images/investor-metrics.svg`
 - `/images/trust-architecture.svg`
+- `/images/chat-conversation-flow.svg`
+- `/images/receipt-proof.svg`
 
 ## 6) Brand usage map
 

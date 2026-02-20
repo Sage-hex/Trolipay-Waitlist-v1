@@ -182,12 +182,12 @@ export default function WaitlistLanding() {
           <div className="grid gap-6 md:grid-cols-2">
             <motion.div {...reveal}>
               <Card className="overflow-hidden border-brand-primary/15 p-3">
-                <img src="/images/investor-metrics.svg" alt="Investor metrics style dashboard visual" className="w-full rounded-lg border border-border" />
+                <img src="/images/chat-conversation-flow.svg" alt="Customer and bot chat conversation with order confirmation flow" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
             <motion.div {...reveal}>
               <Card className="overflow-hidden border-brand-primary/15 p-3">
-                <img src="/images/trust-architecture.svg" alt="Trust architecture visual" className="w-full rounded-lg border border-border" />
+                <img src="/images/receipt-proof.svg" alt="Receipt generation and payment proof dashboard visual" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
           </div>
