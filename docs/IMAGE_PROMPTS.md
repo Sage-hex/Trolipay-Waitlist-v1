@@ -23,3 +23,7 @@ Use these prompts with Midjourney, DALL·E, Stable Diffusion, or any design imag
 
 ## 7) Receipt Proof Visual (`public/images/receipt-proof.svg`)
 "Premium admin receipt verification panel with paid badge, receipt PDF card, payment proof and summary blocks, dark slate enterprise dashboard style with emerald highlights, no logos, 16:10"
+
+
+## 8) Animated Live Chat Component (design reference only)
+"Design a premium chat interface where customer and bot exchange order messages in sequence, including order confirmation, delivery fee confirmation, payment verification, and receipt generation states. Clean bubble spacing, fintech UI styling, high readability, no logos."

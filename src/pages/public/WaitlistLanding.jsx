@@ -19,6 +19,7 @@ import FaqAccordion from '../../components/domain/FaqAccordion'
 import WaitlistForm from '../../components/domain/WaitlistForm'
 import Button from '../../components/ui/Button'
 import Card from '../../components/ui/Card'
+import LiveChatPreview from '../../components/domain/LiveChatPreview'
 
 const features = [
   {
@@ -181,8 +182,8 @@ export default function WaitlistLanding() {
         <Section>
           <div className="grid gap-6 md:grid-cols-2">
             <motion.div {...reveal}>
-              <Card className="overflow-hidden border-brand-primary/15 p-3">
-                <img src="/images/chat-conversation-flow.svg" alt="Customer and bot chat conversation with order confirmation flow" className="w-full rounded-lg border border-border" />
+              <Card className="border-brand-primary/15 p-3">
+                <LiveChatPreview />
               </Card>
             </motion.div>
             <motion.div {...reveal}>

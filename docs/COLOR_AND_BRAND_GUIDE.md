@@ -34,7 +34,7 @@
 2. Core value proposition (verified paid orders from chat)
 3. Problem / Solution / Outcome strip
 4. “What Trolipay is” explanatory pillars
-5. Operational proof visuals (dashboard + live chat conversation + receipt proof)
+5. Operational proof visuals (dashboard + animated live chat component + receipt proof)
 6. Trust evidence (testimonials + FAQ)
 7. Conversion CTAs (waitlist + demo)
 
@@ -45,7 +45,6 @@
 - `/images/commerce-flow.svg`
 - `/images/investor-metrics.svg`
 - `/images/trust-architecture.svg`
-- `/images/chat-conversation-flow.svg`
 - `/images/receipt-proof.svg`
 
 ## 6) Brand usage map
@@ -54,3 +53,8 @@
 - Emphasis highlights: `text-brand-accent`, `ring-brand-accent`
 - Premium cards: `bg-card-bg border-border shadow-sm`
 - Readability hierarchy: `text-brand-primary` for titles, `text-text-muted` for support copy
+
+
+## 7) Interaction-specific note
+
+- Live chat interaction box is now component-driven (`LiveChatPreview`) and simulates real-time customer/bot exchange with order confirmation + receipt generation cues.
