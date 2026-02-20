@@ -11,3 +11,13 @@
   --color-text: #111827;
   --color-text-muted: #6B7280;
 }
+
+:root {
+  color: var(--color-text);
+  background-color: var(--color-app-bg);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-app-bg);
+}
