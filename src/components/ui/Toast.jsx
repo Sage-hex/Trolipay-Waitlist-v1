@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { CircleCheck, CircleX, Info, X } from 'lucide-react'
+import { AlertTriangle, CircleCheck, CircleX, Info, X } from 'lucide-react'
 import { dismissToast, subscribeToasts } from './toastStore'
 
 const toastTypes = {
@@ -11,6 +11,10 @@ const toastTypes = {
   error: {
     icon: CircleX,
     style: 'border-red-200 bg-red-50 text-red-800',
+  },
+  warning: {
+    icon: AlertTriangle,
+    style: 'border-amber-200 bg-amber-50 text-amber-800',
   },
   info: {
     icon: Info,
