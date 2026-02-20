@@ -16,6 +16,7 @@
 - Use dark confidence blocks (`bg-brand-primary`) only where strategic contrast is needed.
 - Pair dashboard proof visuals with a dedicated chat-inbox visual so the value is explicit for busy SME chat operators.
 - Use premium cards with clean spacing and restrained depth (`rounded-xl border border-border bg-card-bg shadow-sm`).
+- Depth treatment: subtle pseudo-3D surface classes (`depth-3d`, `depth-3d-soft`) for hero/proof emphasis without heavy skeuomorphism.
 
 ## 3) Motion system (working + calm)
 

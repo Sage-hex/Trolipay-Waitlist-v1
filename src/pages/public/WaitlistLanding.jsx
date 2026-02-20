@@ -134,10 +134,10 @@ export default function WaitlistLanding() {
             </motion.div>
 
             <motion.div {...reveal} className="grid gap-4 md:grid-cols-[1fr_0.82fr]">
-              <Card className="overflow-hidden border-brand-primary/20 p-3">
+              <Card className="depth-3d overflow-hidden border-brand-primary/20 p-3">
                 <img src="/images/hero-dashboard.svg" alt="Premium Trolipay admin dashboard preview" className="w-full rounded-lg border border-border" />
               </Card>
-              <Card className="overflow-hidden border-brand-primary/20 p-3">
+              <Card className="depth-3d overflow-hidden border-brand-primary/20 p-3">
                 <img src="/images/chat-inbox.svg" alt="Busy chat inbox with many incoming customer orders" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
@@ -145,7 +145,7 @@ export default function WaitlistLanding() {
         </Section>
 
         <Section className="py-0">
-          <motion.div {...reveal} className="rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
+          <motion.div {...reveal} className="depth-3d rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
             <div className="grid gap-4 md:grid-cols-3">
               <div className="rounded-xl bg-white/10 p-4">
                 <p className="text-xs uppercase tracking-wide text-slate-300">Problem</p>
@@ -164,7 +164,7 @@ export default function WaitlistLanding() {
         </Section>
 
         <Section>
-          <motion.div {...reveal} className="rounded-2xl border border-border bg-card-bg p-6 shadow-sm">
+          <motion.div {...reveal} className="depth-3d-soft rounded-2xl border border-border bg-card-bg p-6 shadow-sm">
             <div className="flex items-center gap-2 text-brand-accent">
               <WalletCards className="h-4 w-4" />
               <p className="text-sm font-medium">What Trolipay is</p>
@@ -182,12 +182,12 @@ export default function WaitlistLanding() {
         <Section>
           <div className="grid gap-6 md:grid-cols-2">
             <motion.div {...reveal}>
-              <Card className="border-brand-primary/15 p-3">
+              <Card className="depth-3d-soft border-brand-primary/15 p-3">
                 <LiveChatPreview />
               </Card>
             </motion.div>
             <motion.div {...reveal}>
-              <Card className="overflow-hidden border-brand-primary/15 p-3">
+              <Card className="depth-3d-soft overflow-hidden border-brand-primary/15 p-3">
                 <img src="/images/receipt-proof.svg" alt="Receipt generation and payment proof dashboard visual" className="w-full rounded-lg border border-border" />
               </Card>
             </motion.div>
