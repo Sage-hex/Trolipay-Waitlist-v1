@@ -104,7 +104,7 @@ function scrollToSection(sectionId) {
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(15,23,42,0.16),transparent_36%),radial-gradient(circle_at_84%_9%,rgba(4,120,87,0.18),transparent_38%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_14%,rgba(15,23,42,0.18),transparent_36%),radial-gradient(circle_at_84%_9%,rgba(4,120,87,0.18),transparent_38%),radial-gradient(circle_at_30%_88%,rgba(202,138,4,0.14),transparent_34%)]" />
 
       <div className="relative">
         <LandingNavbar />
@@ -114,7 +114,7 @@ export default function WaitlistLanding() {
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-brand-accent shadow-sm">
                 <Sparkles className="h-3.5 w-3.5" />
-                Built for high-volume SME chat commerce
+                Built for African small businesses running chat orders daily
               </p>
               <h1 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
                 <span className="text-brand-primary">Stop drowning in chat orders. </span>
@@ -122,7 +122,7 @@ export default function WaitlistLanding() {
                   Run verified commerce from one engine.
                 </span>
               </h1>
-              <p className="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
+              <p className="mt-4 text-sm leading-relaxed text-text md:text-base">
                 Trolipay turns scattered WhatsApp/Telegram conversations into structured, payable, auditable orders with deterministic delivery fees and receipt-backed trust.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -147,17 +147,17 @@ export default function WaitlistLanding() {
         <Section className="py-0">
           <motion.div {...reveal} className="depth-3d rounded-2xl border border-border bg-brand-primary p-6 shadow-sm">
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-xl bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-wide text-slate-300">Problem</p>
-                <p className="mt-1 text-sm text-slate-100">SMEs juggle too many chats manually and lose orders to delay and confusion.</p>
+              <div className="rounded-xl bg-white/12 p-4">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Problem</p>
+                <p className="mt-1 text-sm text-slate-50">SMEs juggle too many chats manually and lose orders to delay and confusion.</p>
               </div>
-              <div className="rounded-xl bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-wide text-slate-300">Solution</p>
-                <p className="mt-1 text-sm text-slate-100">Trolipay creates durable order objects with verified payment truth.</p>
+              <div className="rounded-xl bg-white/12 p-4">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Solution</p>
+                <p className="mt-1 text-sm text-slate-50">Trolipay creates durable order objects with verified payment truth.</p>
               </div>
-              <div className="rounded-xl bg-white/10 p-4">
-                <p className="text-xs uppercase tracking-wide text-slate-300">Outcome</p>
-                <p className="mt-1 text-sm text-slate-100">Faster fulfillment, less fraud risk, and premium customer trust signals.</p>
+              <div className="rounded-xl bg-white/12 p-4">
+                <p className="text-xs uppercase tracking-wide text-slate-200">Outcome</p>
+                <p className="mt-1 text-sm text-slate-50">Faster fulfillment, less fraud risk, and premium customer trust signals.</p>
               </div>
             </div>
           </motion.div>
@@ -171,7 +171,7 @@ export default function WaitlistLanding() {
             </div>
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {pillars.map((item) => (
-                <p key={item} className="rounded-xl border border-border bg-app-bg p-4 text-sm leading-relaxed text-text-muted">
+                <p key={item} className="rounded-xl border border-border bg-app-bg p-4 text-sm leading-relaxed text-text">
                   {item}
                 </p>
               ))}

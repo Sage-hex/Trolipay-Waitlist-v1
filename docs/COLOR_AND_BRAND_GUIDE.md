@@ -14,12 +14,14 @@
 
 - Keep the page bright and premium (`bg-app-bg`) with a stable radial brand field in the background.
 - Use dark confidence blocks (`bg-brand-primary`) only where strategic contrast is needed.
+- Warm regional accent stripe (amber/clay gradient) in navbar to subtly signal African market context without breaking core brand tokens.
 - Pair dashboard proof visuals with a dedicated chat-inbox visual so the value is explicit for busy SME chat operators.
 - Use premium cards with clean spacing and restrained depth (`rounded-xl border border-border bg-card-bg shadow-sm`).
 - Depth treatment: subtle pseudo-3D surface classes (`depth-3d`, `depth-3d-soft`) for hero/proof emphasis without heavy skeuomorphism.
 
 ## 3) Motion system (working + calm)
 
+- Smooth-scroll baseline is enabled at `html { scroll-behavior: smooth; }` with section offsets (`scroll-mt-24`) for sticky navbar compatibility.
 - Duration: `0.20s`
 - Easing: `easeOut`
 - No spring, no bounce

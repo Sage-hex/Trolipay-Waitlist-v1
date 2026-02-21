@@ -10,9 +10,14 @@ function scrollToSection(sectionId) {
 export default function LandingNavbar() {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-app-bg/95 backdrop-blur-sm">
+      <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <a href="/" className="text-lg font-semibold tracking-tight text-brand-primary">
-          ChatCommerce
+        <a href="/" className="flex items-center gap-3">
+          <span className="inline-block h-8 w-8 rounded-lg bg-brand-primary" />
+          <span>
+            <span className="block text-lg font-semibold tracking-tight text-brand-primary">Trolipay</span>
+            <span className="block text-[11px] uppercase tracking-wide text-text-muted">Built for African SMEs</span>
+          </span>
         </a>
 
         <div className="flex items-center gap-3">
