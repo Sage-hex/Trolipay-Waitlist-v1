@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const conversation = [
@@ -12,52 +12,40 @@ const conversation = [
 export default function LiveChatPreview() {
   const [visibleCount, setVisibleCount] = useState(1)
   const [showTyping, setShowTyping] = useState(true)
+  const messagesRef = useRef(null)
 
   useEffect(() => {
-    const timers = []
+    const cycleMs = 1200 * conversation.length + 3000
 
-    for (let i = 1; i < conversation.length; i += 1) {
-      timers.push(
-        window.setTimeout(() => {
-          setVisibleCount(i + 1)
-          setShowTyping(i !== conversation.length - 1)
-        }, 1200 * i),
-      )
-    }
-
-    timers.push(
-      window.setTimeout(() => {
-        setVisibleCount(1)
-        setShowTyping(true)
-      }, 1200 * conversation.length + 1800),
-    )
-
-    const interval = window.setInterval(() => {
+    function runSequence() {
       setVisibleCount(1)
       setShowTyping(true)
 
       for (let i = 1; i < conversation.length; i += 1) {
-        timers.push(
-          window.setTimeout(() => {
-            setVisibleCount(i + 1)
-            setShowTyping(i !== conversation.length - 1)
-          }, 1200 * i),
-        )
+        window.setTimeout(() => {
+          setVisibleCount(i + 1)
+          setShowTyping(i !== conversation.length - 1)
+        }, 1200 * i)
       }
 
-      timers.push(
-        window.setTimeout(() => {
-          setVisibleCount(1)
-          setShowTyping(true)
-        }, 1200 * conversation.length + 1800),
-      )
-    }, 1200 * conversation.length + 3000)
+      window.setTimeout(() => {
+        setVisibleCount(1)
+        setShowTyping(true)
+      }, 1200 * conversation.length + 1800)
+    }
+
+    runSequence()
+    const interval = window.setInterval(runSequence, cycleMs)
 
     return () => {
-      timers.forEach((timer) => window.clearTimeout(timer))
       window.clearInterval(interval)
     }
   }, [])
+
+  useEffect(() => {
+    if (!messagesRef.current) return
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight
+  }, [visibleCount, showTyping])
 
   const visibleMessages = useMemo(() => conversation.slice(0, visibleCount), [visibleCount])
 
@@ -68,7 +56,7 @@ export default function LiveChatPreview() {
         <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700">Real-time demo</span>
       </div>
 
-      <div className="space-y-2">
+      <div ref={messagesRef} className="h-64 space-y-2 overflow-hidden rounded-lg border border-border bg-white p-3">
         <AnimatePresence initial={false}>
           {visibleMessages.map((message) => (
             <motion.div
@@ -78,9 +66,7 @@ export default function LiveChatPreview() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
               className={`max-w-[90%] rounded-2xl px-3 py-2 text-xs leading-relaxed ${
-                message.sender === 'bot'
-                  ? 'bg-emerald-50 text-emerald-900'
-                  : 'ml-auto bg-blue-50 text-blue-900'
+                message.sender === 'bot' ? 'bg-emerald-50 text-emerald-900' : 'ml-auto bg-blue-50 text-blue-900'
               }`}
             >
               {message.text}
