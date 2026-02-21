@@ -50,6 +50,7 @@ export default function LiveChatPreview() {
   const visibleMessages = useMemo(() => conversation.slice(0, visibleCount), [visibleCount])
 
   return (
+<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-jftbd7
     <div className="rounded-lg border border-border bg-app-bg p-3 sm:p-4">
       <div className="mb-3 flex flex-wrap items-start justify-between gap-2 sm:items-center">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-text-muted sm:text-xs">Live chat order flow</p>
@@ -60,6 +61,15 @@ export default function LiveChatPreview() {
         ref={messagesRef}
         className="h-52 space-y-2 overflow-y-auto rounded-lg border border-border bg-white p-2.5 sm:h-64 sm:p-3"
       >
+=======
+    <div className="rounded-lg border border-border bg-app-bg p-4">
+      <div className="mb-3 flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">Live chat order flow</p>
+        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700">Real-time demo</span>
+      </div>
+
+      <div ref={messagesRef} className="h-64 space-y-2 overflow-hidden rounded-lg border border-border bg-white p-3">
+>>>>>>> main
         <AnimatePresence initial={false}>
           {visibleMessages.map((message) => (
             <motion.div
@@ -68,7 +78,11 @@ export default function LiveChatPreview() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
+<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-jftbd7
               className={`max-w-[92%] break-words rounded-2xl px-2.5 py-2 text-[11px] leading-relaxed sm:max-w-[90%] sm:px-3 sm:text-xs ${
+=======
+              className={`max-w-[90%] rounded-2xl px-3 py-2 text-xs leading-relaxed ${
+>>>>>>> main
                 message.sender === 'bot' ? 'bg-emerald-50 text-emerald-900' : 'ml-auto bg-blue-50 text-blue-900'
               }`}
             >
