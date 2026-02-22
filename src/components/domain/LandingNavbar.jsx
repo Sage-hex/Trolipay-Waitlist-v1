@@ -1,7 +1,29 @@
-import Button from '../ui/Button'
-import { animatedScrollToSection } from '../../utils/animatedScroll'
+import { useEffect, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
+
+function getInitialTheme() {
+  if (typeof window === 'undefined') return 'light'
+
+  const storedTheme = window.localStorage.getItem('theme')
+  if (storedTheme === 'light' || storedTheme === 'dark') {
+    return storedTheme
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+}
 
 export default function LandingNavbar() {
+  const [theme, setTheme] = useState(getInitialTheme)
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme((previous) => (previous === 'dark' ? 'light' : 'dark'))
+  }
+
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-app-bg/95 backdrop-blur-sm">
       <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
@@ -17,11 +39,19 @@ export default function LandingNavbar() {
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <button
             type="button"
-            onClick={() => animatedScrollToSection('demo')}
-            className="rounded-lg border border-border bg-white px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            onClick={toggleTheme}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:h-9 sm:w-9"
+            aria-label="Toggle dark mode"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
+
+          <a
+            href="#demo"
+            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
             Demo
-          </button>
+          </a>
           <a
             href="/auth/login"
             className="rounded-lg bg-brand-primary px-2.5 py-1.5 text-xs font-medium text-white transition duration-150 ease-out hover:opacity-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"

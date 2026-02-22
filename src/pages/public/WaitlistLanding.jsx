@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { animatedScrollToSection } from '../../utils/animatedScroll'
 import { ArrowRight, BadgeCheck, BarChart3, ClipboardCheck, Route, ShieldCheck, Sparkles, WalletCards } from 'lucide-react'
 import LandingNavbar from '../../components/domain/LandingNavbar'
 import LandingFooter from '../../components/domain/LandingFooter'
@@ -8,7 +7,6 @@ import FeatureCard from '../../components/domain/FeatureCard'
 import TestimonialCard from '../../components/domain/TestimonialCard'
 import FaqAccordion from '../../components/domain/FaqAccordion'
 import WaitlistForm from '../../components/domain/WaitlistForm'
-import Button from '../../components/ui/Button'
 import Card from '../../components/ui/Card'
 import LiveChatPreview from '../../components/domain/LiveChatPreview'
 
@@ -111,13 +109,19 @@ export default function WaitlistLanding() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={() => animatedScrollToSection('waitlist')} className="inline-flex items-center gap-2">
+                <a
+                  href="#waitlist"
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-white transition duration-150 ease-out hover:opacity-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg"
+                >
                   Join waitlist
                   <ArrowRight className="h-4 w-4" />
-                </Button>
-                <Button variant="secondary" onClick={() => animatedScrollToSection('demo')}>
+                </a>
+                <a
+                  href="#demo"
+                  className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg"
+                >
                   See live demo
-                </Button>
+                </a>
               </div>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
