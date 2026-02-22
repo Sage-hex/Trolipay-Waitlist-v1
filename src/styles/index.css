@@ -60,3 +60,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.chat-preview-scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-preview-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}

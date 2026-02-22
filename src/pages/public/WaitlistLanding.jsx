@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, BadgeCheck, BarChart3, ClipboardCheck, Route, ShieldCheck, Sparkles, WalletCards } from 'lucide-react'
 import LandingNavbar from '../../components/domain/LandingNavbar'
@@ -44,6 +45,35 @@ const reveal = {
   transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
 }
 
+const heroTypingText = 'Reduce payment disputes and fulfill chat orders with audit-ready precision.'
+
+function TypingHeroText() {
+  const [visibleChars, setVisibleChars] = useState(0)
+
+  useEffect(() => {
+    const typingInterval = window.setInterval(() => {
+      setVisibleChars((count) => {
+        if (count >= heroTypingText.length) {
+          window.clearInterval(typingInterval)
+          return count
+        }
+        return count + 1
+      })
+    }, 28)
+
+    return () => {
+      window.clearInterval(typingInterval)
+    }
+  }, [])
+
+  return (
+    <>
+      {heroTypingText.slice(0, visibleChars)}
+      {visibleChars < heroTypingText.length ? <span className="ml-1 inline-block h-7 w-0.5 animate-pulse bg-brand-primary align-middle" /> : null}
+    </>
+  )
+}
+
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
@@ -59,7 +89,7 @@ export default function WaitlistLanding() {
                 Chat commerce infrastructure for African operators
               </p>
               <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-brand-primary sm:text-4xl md:text-5xl">
-                Reduce payment disputes and fulfill chat orders with audit-ready precision.
+                <TypingHeroText />
               </h1>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
                 Trolipay helps high-volume chat-first businesses convert messages into payable orders, verify payments, and maintain one trusted fulfillment timeline.
