@@ -54,7 +54,7 @@ export default function LandingNavbar() {
           </a>
           <a
             href="/auth/login"
-            className="rounded-lg bg-brand-primary px-2.5 py-1.5 text-xs font-medium text-white transition duration-150 ease-out hover:opacity-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            className="rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs font-medium text-white transition duration-150 ease-out hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400 sm:px-4 sm:py-2 sm:text-sm"
           >
             Login
           </a>

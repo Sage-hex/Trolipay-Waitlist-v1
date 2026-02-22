@@ -96,7 +96,7 @@ export default function WaitlistLanding() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#waitlist" className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-white transition hover:opacity-95">
+                <a href="#waitlist" className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400">
                   Apply for pilot waitlist
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -226,13 +226,13 @@ export default function WaitlistLanding() {
 
         <Section id="waitlist" className="pb-8">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_1fr]">
-            <motion.div {...reveal} className="rounded-2xl border border-border bg-brand-primary p-6 text-white sm:p-8">
-              <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium">
+            <motion.div {...reveal} className="rounded-2xl border border-slate-700 bg-slate-900 p-6 text-slate-50 shadow-lg shadow-slate-900/20 sm:p-8 dark:border-emerald-300/30 dark:bg-emerald-500 dark:text-slate-950 dark:shadow-emerald-900/20">
+              <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-inherit ring-1 ring-white/25 dark:bg-emerald-950/15 dark:ring-emerald-900/25">
                 <BadgeCheck className="h-3.5 w-3.5" /> Qualification-based onboarding
               </p>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">Apply for pilot access</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-100 sm:text-base">We prioritize teams with active order flow, measurable payment friction, and clear expansion plans.</p>
-              <div className="mt-5 rounded-xl bg-white/10 p-4 text-sm leading-relaxed text-slate-100">Current review SLA: 72 hours. New pilot cohort opens monthly.</div>
+              <p className="mt-3 text-sm leading-relaxed text-inherit/90 sm:text-base">We prioritize teams with active order flow, measurable payment friction, and clear expansion plans.</p>
+              <div className="mt-5 rounded-xl bg-white/15 p-4 text-sm leading-relaxed text-inherit ring-1 ring-white/20 dark:bg-emerald-950/15 dark:ring-emerald-900/25">Current review SLA: 72 hours. New pilot cohort opens monthly.</div>
             </motion.div>
             <motion.div {...reveal}>
               <WaitlistForm intent="waitlist" />
