@@ -1,22 +1,25 @@
 import { animate } from 'framer-motion'
 
-let activeScroll = null
+let activeScrollAnimation = null
 
-export function scrollToSection(sectionId, duration = 0.9) {
+// Simple, predictable framer-motion scroll helper.
+export function animatedScrollToSection(sectionId, options = {}) {
   const element = document.getElementById(sectionId)
   if (!element) return
 
-  const from = window.scrollY
-  const to = element.getBoundingClientRect().top + window.scrollY - 72
+  const startY = window.scrollY
+  const targetY = element.getBoundingClientRect().top + window.scrollY
 
-  if (activeScroll) activeScroll.stop()
+  if (activeScrollAnimation) activeScrollAnimation.stop()
 
-  activeScroll = animate(from, to, {
-    duration,
-    ease: [0.22, 1, 0.36, 1],
-    onUpdate: (value) => window.scrollTo(0, Math.round(value)),
+  activeScrollAnimation = animate(startY, targetY, {
+    duration: options.duration ?? 1.1,
+    ease: options.ease ?? [0.25, 0.1, 0.25, 1],
+    onUpdate: (latest) => {
+      window.scrollTo(0, Math.round(latest))
+    },
     onComplete: () => {
-      activeScroll = null
+      activeScrollAnimation = null
     },
   })
 }
