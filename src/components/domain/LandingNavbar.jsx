@@ -1,11 +1,5 @@
 import Button from '../ui/Button'
-
-function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
+import { animatedScrollToSection } from '../../utils/animatedScroll'
 
 export default function LandingNavbar() {
   return (
@@ -23,7 +17,7 @@ export default function LandingNavbar() {
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <button
             type="button"
-            onClick={() => scrollToSection('demo')}
+            onClick={() => animatedScrollToSection('demo', { duration: 0.45 })}
             className="rounded-lg border border-border bg-white px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
             Demo

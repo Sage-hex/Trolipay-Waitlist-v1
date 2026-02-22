@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { animatedScrollToSection } from '../../utils/animatedScroll'
 import { ArrowRight, BadgeCheck, BarChart3, ClipboardCheck, Route, ShieldCheck, Sparkles, WalletCards } from 'lucide-react'
 import LandingNavbar from '../../components/domain/LandingNavbar'
 import LandingFooter from '../../components/domain/LandingFooter'
@@ -77,13 +78,6 @@ const steps = [
   },
 ]
 
-function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
-
 const reveal = {
   initial: { opacity: 0, y: 12 },
   whileInView: { opacity: 1, y: 0 },
@@ -117,11 +111,11 @@ export default function WaitlistLanding() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={() => scrollToSection('waitlist')} className="inline-flex items-center gap-2">
+                <Button onClick={() => animatedScrollToSection('waitlist', { duration: 0.55 })} className="inline-flex items-center gap-2">
                   Join waitlist
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button variant="secondary" onClick={() => scrollToSection('demo')}>
+                <Button variant="secondary" onClick={() => animatedScrollToSection('demo', { duration: 0.5 })}>
                   See live demo
                 </Button>
               </div>
