@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #0f172a;
-  --color-brand-accent: #047857;
+  --color-brand-primary: #09090b;
+  --color-brand-accent: #7ec88b;
 
-  --color-app-bg: #f8fafc;
+  --color-app-bg: #fafafa;
   --color-card-bg: #ffffff;
-  --color-border: #e5e7eb;
+  --color-border: #e4e4e7;
 
-  --color-text: #111827;
-  --color-text-muted: #6b7280;
+  --color-text: #18181b;
+  --color-text-muted: #52525b;
 }
 
 :root {
@@ -20,19 +20,19 @@
 
 :root.dark {
   color-scheme: dark;
-  --color-brand-primary: #e2e8f0;
-  --color-brand-accent: #34d399;
+  --color-brand-primary: #ffffff;
+  --color-brand-accent: #7ec88b;
 
-  --color-app-bg: #020617;
-  --color-card-bg: #0f172a;
-  --color-border: #1f2937;
+  --color-app-bg: #09090b;
+  --color-card-bg: #111113;
+  --color-border: #303036;
 
-  --color-text: #e5e7eb;
-  --color-text-muted: #94a3b8;
+  --color-text: #ffffff;
+  --color-text-muted: #d7d7db;
 }
 
 * {
-  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 body {
@@ -42,19 +42,10 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.depth-3d {
-  transform-style: preserve-3d;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.7) inset,
-    0 14px 30px rgba(15, 23, 42, 0.08),
-    0 2px 8px rgba(15, 23, 42, 0.06);
-}
-
 .depth-3d-soft {
-  transform-style: preserve-3d;
   box-shadow:
-    0 8px 18px rgba(15, 23, 42, 0.06),
-    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+    0 10px 20px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.75) inset;
 }
 
 html {

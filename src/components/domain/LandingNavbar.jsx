@@ -29,7 +29,7 @@ export default function LandingNavbar() {
       <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <a href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <span className="inline-block h-7 w-7 shrink-0 rounded-lg bg-brand-primary sm:h-8 sm:w-8" />
+          <span className="inline-block h-7 w-7 shrink-0 rounded-lg bg-brand-accent sm:h-8 sm:w-8" />
           <span className="min-w-0">
             <span className="block truncate text-base font-semibold tracking-tight text-brand-primary sm:text-lg">Trolipay</span>
             <span className="block truncate text-[10px] uppercase tracking-wide text-text-muted sm:text-[11px]">Built for African SMEs</span>
@@ -54,7 +54,7 @@ export default function LandingNavbar() {
           </a>
           <a
             href="/auth/login"
-            className="rounded-lg bg-slate-900 px-2.5 py-1.5 text-xs font-medium text-white transition duration-150 ease-out hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400 sm:px-4 sm:py-2 sm:text-sm"
+            className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-[#0b0b0d] transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
             Login
           </a>
