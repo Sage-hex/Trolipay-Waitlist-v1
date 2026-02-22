@@ -103,6 +103,14 @@ export default function WaitlistLanding() {
                 Run chat orders like a modern commerce operation.
               </h1>
 
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+                className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs text-text-muted"
+              >
+                <span className="inline-block h-2 w-2 rounded-full bg-brand-accent" /> Live order orchestration preview
+              </motion.div>
+
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
                 Trolipay transforms WhatsApp and Telegram demand into structured, payable, auditable orders with verified payments,
                 deterministic delivery fees, and receipt-backed customer trust.
@@ -118,7 +126,7 @@ export default function WaitlistLanding() {
                 </a>
                 <a
                   href="#demo"
-                  className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg"
+                  className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg"
                 >
                   See live demo
                 </a>
@@ -136,10 +144,10 @@ export default function WaitlistLanding() {
 
             <motion.div {...reveal}>
               <Card className="depth-3d-soft overflow-hidden border-brand-primary/15 p-3 sm:p-4">
-                <div className="rounded-xl border border-border bg-white p-3 sm:p-4">
+                <div className="rounded-xl border border-border bg-card-bg p-3 sm:p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">Command center</p>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[11px] font-medium text-emerald-700">
+                    <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card-bg px-2 py-0.5 text-[11px] font-medium text-brand-accent">
                       <BadgeCheck className="h-3.5 w-3.5" />
                       Payments verified
                     </span>

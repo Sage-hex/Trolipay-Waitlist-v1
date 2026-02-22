@@ -2,7 +2,7 @@ const variants = {
   primary:
     'bg-brand-primary text-white hover:opacity-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg',
   secondary:
-    'bg-white border border-border text-text hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg',
+    'bg-card-bg border border-border text-text hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg',
 }
 
 export default function Button({

@@ -40,7 +40,7 @@ export default function LandingNavbar() {
           <button
             type="button"
             onClick={toggleTheme}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:h-9 sm:w-9"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:h-9 sm:w-9"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -48,7 +48,7 @@ export default function LandingNavbar() {
 
           <a
             href="#demo"
-            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:bg-white/70 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
             Demo
           </a>
