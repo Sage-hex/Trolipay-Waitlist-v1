@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 export default function FeatureCard({ title, description }) {
   return (
     <motion.article
-      whileHover={{ y: -4, scale: 1.01 }}
-      transition={{ duration: 0.18, ease: 'easeOut' }}
+      whileHover={{ y: -3, scale: 1.01 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 24 }}
       className="group relative overflow-hidden rounded-xl border border-border bg-card-bg p-6 shadow-sm"
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(15,23,42,0.05),transparent_45%,rgba(4,120,87,0.08))] opacity-80" />

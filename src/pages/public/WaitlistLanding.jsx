@@ -79,10 +79,10 @@ const steps = [
 ]
 
 const reveal = {
-  initial: { opacity: 0, y: 12 },
+  initial: { opacity: 0, y: 18 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-  transition: { duration: 0.24, ease: 'easeOut' },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
 }
 
 export default function WaitlistLanding() {
@@ -95,7 +95,7 @@ export default function WaitlistLanding() {
 
         <Section className="pb-10 pt-8 sm:pt-12">
           <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-12">
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.24, ease: 'easeOut' }}>
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-[11px] font-medium text-brand-accent sm:text-xs">
                 <Sparkles className="h-3.5 w-3.5" />
                 Premium commerce infrastructure for African chat-led businesses
@@ -111,11 +111,11 @@ export default function WaitlistLanding() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={() => animatedScrollToSection('waitlist', { duration: 1.05 })} className="inline-flex items-center gap-2">
+                <Button onClick={() => animatedScrollToSection('waitlist')} className="inline-flex items-center gap-2">
                   Join waitlist
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button variant="secondary" onClick={() => animatedScrollToSection('demo', { duration: 0.95 })}>
+                <Button variant="secondary" onClick={() => animatedScrollToSection('demo')}>
                   See live demo
                 </Button>
               </div>
@@ -181,11 +181,11 @@ export default function WaitlistLanding() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            variants={{ show: { transition: { staggerChildren: 0.05 } } }}
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
             className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3"
           >
             {features.map((feature) => (
-              <motion.div key={feature.title} variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.24 }}>
+              <motion.div key={feature.title} variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
                 <FeatureCard title={feature.title} description={feature.description} />
               </motion.div>
             ))}
@@ -204,7 +204,7 @@ export default function WaitlistLanding() {
                     <motion.article
                       key={step.title}
                       {...reveal}
-                      transition={{ duration: 0.24, delay: idx * 0.05 }}
+                      transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
                       className="rounded-xl border border-border bg-card-bg p-5"
                     >
                       <div className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-2.5 py-1 text-xs font-medium text-brand-accent">
@@ -240,11 +240,11 @@ export default function WaitlistLanding() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            variants={{ show: { transition: { staggerChildren: 0.06 } } }}
+            variants={{ show: { transition: { staggerChildren: 0.1 } } }}
             className="mt-6 grid gap-4 md:grid-cols-3"
           >
             {testimonials.map((testimonial) => (
-              <motion.div key={testimonial.role} variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.24 }}>
+              <motion.div key={testimonial.role} variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}>
                 <TestimonialCard quote={testimonial.quote} role={testimonial.role} />
               </motion.div>
             ))}
