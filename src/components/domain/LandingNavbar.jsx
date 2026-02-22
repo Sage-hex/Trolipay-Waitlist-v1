@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 
 function getInitialTheme() {
   if (typeof window === 'undefined') return 'light'
@@ -14,6 +14,7 @@ function getInitialTheme() {
 
 export default function LandingNavbar() {
   const [theme, setTheme] = useState(getInitialTheme)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
@@ -23,6 +24,8 @@ export default function LandingNavbar() {
   const toggleTheme = () => {
     setTheme((previous) => (previous === 'dark' ? 'light' : 'dark'))
   }
+
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-app-bg/95 backdrop-blur-sm">
@@ -46,26 +49,48 @@ export default function LandingNavbar() {
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
 
-          <a
-            href="#waitlist"
-            className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-white transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:text-[#0b0b0d] sm:px-4 sm:py-2 sm:text-sm"
+          <div className="hidden items-center gap-2 sm:flex sm:gap-3">
+            <a
+              href="#waitlist"
+              className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-white transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:text-[#0b0b0d] sm:px-4 sm:py-2 sm:text-sm"
+            >
+              Join waitlist
+            </a>
+            <a
+              href="#demo"
+              className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            >
+              Demo
+            </a>
+            <a
+              href="/faq"
+              className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            >
+              FAQ
+            </a>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:hidden"
+            aria-label="Toggle navigation menu"
           >
-            Join waitlist
-          </a>
-          <a
-            href="#demo"
-            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
-          >
-            Demo
-          </a>
-          <a
-            href="/faq"
-            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
-          >
-            FAQ
-          </a>
+            {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
         </div>
       </div>
+
+
+      {isMenuOpen ? (
+        <div className="border-t border-border bg-card-bg px-4 py-3 sm:hidden">
+          <div className="grid gap-2">
+            <a href="#waitlist" onClick={closeMenu} className="rounded-lg bg-brand-accent px-3 py-2 text-sm font-semibold text-white dark:text-[#0b0b0d]">Join waitlist</a>
+            <a href="#demo" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">Demo</a>
+            <a href="/faq" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">FAQ</a>
+          </div>
+        </div>
+      ) : null}
     </header>
   )
 }

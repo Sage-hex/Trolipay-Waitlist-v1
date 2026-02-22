@@ -69,7 +69,7 @@ function TypingHeadline() {
 export default function WaitlistLanding() {
   return (
     <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(4,120,87,0.22),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,rgba(126,200,139,0.28),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-52 bg-[radial-gradient(circle_at_top,rgba(4,120,87,0.10),transparent_70%)] dark:bg-[radial-gradient(circle_at_top,rgba(126,200,139,0.12),transparent_70%)]" />
       <LandingNavbar />
 
       <Section className="pb-6 pt-8 sm:pt-12">
@@ -112,7 +112,7 @@ export default function WaitlistLanding() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }}>
-            <Card className="depth-3d-soft rounded-none border-x-0 border-y border-border bg-card-bg p-4 sm:rounded-2xl sm:border sm:p-5">
+            <Card className="depth-3d-soft rounded-2xl border border-border bg-card-bg p-4 sm:p-5">
               <div className="flex items-center justify-between gap-2">
                 <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">Proof snapshot</p>
                 <span className="inline-flex items-center gap-1 rounded-full border border-border bg-app-bg px-2 py-0.5 text-[11px] font-medium text-brand-accent">
@@ -146,10 +146,10 @@ export default function WaitlistLanding() {
 
       <Section id="demo" className="pt-2">
         <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
-          <Card className="rounded-none border-x-0 border-y border-border p-3 sm:rounded-2xl sm:border sm:p-4">
+          <Card className="rounded-2xl border border-border p-3 sm:p-4">
             <LiveChatPreview />
           </Card>
-          <Card className="rounded-none border-x-0 border-y border-border p-5 sm:rounded-2xl sm:border sm:p-6">
+          <Card className="rounded-2xl border border-border p-5 sm:p-6">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-2.5 py-1 text-xs font-medium text-brand-accent">
               <ShieldCheck className="h-3.5 w-3.5" /> Trust posture
             </p>
@@ -170,7 +170,7 @@ export default function WaitlistLanding() {
 
       <Section id="waitlist" className="pb-8 pt-4">
         <div className="grid gap-5 lg:grid-cols-[1fr_1.05fr]">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-none border-x-0 border-y border-border bg-card-bg p-5 sm:rounded-2xl sm:border sm:p-6">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-2xl border border-border bg-card-bg p-5 sm:p-6">
             <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">Apply for pilot access</h2>
             <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">
               We prioritize operators with active order volume and measurable payment friction. This keeps onboarding focused and results-oriented.
