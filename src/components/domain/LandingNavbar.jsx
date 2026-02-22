@@ -18,14 +18,13 @@ export default function LandingNavbar() {
   }, [theme])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-app-bg/90 backdrop-blur-lg">
-      <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
+    <header className="sticky top-0 z-40 border-b border-border bg-app-bg/90 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="/" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-2.5">
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-primary text-sm font-bold text-app-bg">T</span>
           <div>
-            <p className="text-sm font-semibold text-brand-primary sm:text-base">Trolipay</p>
-            <p className="text-[10px] uppercase tracking-wide text-text-muted">Built for African SMEs</p>
+            <p className="text-sm font-semibold text-brand-primary">Trolipay</p>
+            <p className="text-[10px] uppercase tracking-wide text-text-muted">Chat commerce infrastructure</p>
           </div>
         </a>
 
@@ -38,6 +37,7 @@ export default function LandingNavbar() {
           >
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
+
           <button
             type="button"
             onClick={() => scrollToSection('features')}
@@ -45,12 +45,13 @@ export default function LandingNavbar() {
           >
             Features
           </button>
+
           <button
             type="button"
             onClick={() => scrollToSection('waitlist')}
             className="rounded-lg bg-brand-primary px-3 py-2 text-xs font-medium text-app-bg transition hover:opacity-95 sm:text-sm"
           >
-            Join waitlist
+            Get access
           </button>
         </div>
       </div>
