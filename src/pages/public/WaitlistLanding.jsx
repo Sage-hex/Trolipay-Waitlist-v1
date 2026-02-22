@@ -111,11 +111,11 @@ export default function WaitlistLanding() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button onClick={() => animatedScrollToSection('waitlist', { duration: 0.55 })} className="inline-flex items-center gap-2">
+                <Button onClick={() => animatedScrollToSection('waitlist', { duration: 1.05 })} className="inline-flex items-center gap-2">
                   Join waitlist
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button variant="secondary" onClick={() => animatedScrollToSection('demo', { duration: 0.5 })}>
+                <Button variant="secondary" onClick={() => animatedScrollToSection('demo', { duration: 0.95 })}>
                   See live demo
                 </Button>
               </div>
