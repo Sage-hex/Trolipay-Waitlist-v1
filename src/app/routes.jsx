@@ -1,0 +1,15 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import WaitlistLanding from '../pages/public/WaitlistLanding'
+import PrivacyPage from '../pages/public/PrivacyPage'
+import TermsPage from '../pages/public/TermsPage'
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<WaitlistLanding />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/terms" element={<TermsPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  )
+}
