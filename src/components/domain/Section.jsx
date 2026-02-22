@@ -4,7 +4,7 @@ export default function Section({ id, className = '', children }) {
   return (
     <motion.section
       id={id}
-      className={`scroll-mt-24 px-6 py-14 md:py-20 ${className}`}
+      className={`scroll-mt-24 px-0 py-12 sm:px-6 md:py-20 ${className}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}

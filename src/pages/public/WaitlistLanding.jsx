@@ -36,32 +36,40 @@ const pilotFocus = [
 
 function TypingHeadline() {
   const [count, setCount] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
-    const t = window.setInterval(() => {
-      setCount((v) => {
-        if (v >= heroText.length) {
-          window.clearInterval(t)
-          return v
-        }
-        return v + 1
-      })
-    }, 24)
+    const timeout = window.setTimeout(
+      () => {
+        setCount((value) => {
+          if (!isDeleting && value < heroText.length) return value + 1
+          if (!isDeleting && value === heroText.length) {
+            setIsDeleting(true)
+            return value
+          }
+          if (isDeleting && value > 0) return value - 1
+          setIsDeleting(false)
+          return 0
+        })
+      },
+      !isDeleting && count === heroText.length ? 1400 : isDeleting ? 18 : 34,
+    )
 
-    return () => window.clearInterval(t)
-  }, [])
+    return () => window.clearTimeout(timeout)
+  }, [count, isDeleting])
 
   return (
     <>
       {heroText.slice(0, count)}
-      {count < heroText.length ? <span className="ml-1 inline-block h-7 w-0.5 animate-pulse bg-brand-accent align-middle" /> : null}
+      <span className="ml-1 inline-block h-7 w-0.5 animate-pulse bg-brand-accent align-middle" />
     </>
   )
 }
 
 export default function WaitlistLanding() {
   return (
-    <div className="min-h-screen bg-app-bg text-text">
+    <div className="relative min-h-screen overflow-x-clip bg-app-bg text-text">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(4,120,87,0.22),transparent_65%)] dark:bg-[radial-gradient(circle_at_top,rgba(126,200,139,0.28),transparent_60%)]" />
       <LandingNavbar />
 
       <Section className="pb-6 pt-8 sm:pt-12">
@@ -81,20 +89,30 @@ export default function WaitlistLanding() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#waitlist" className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 dark:text-[#0b0b0d]">
-                Apply for pilot
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a href="#demo" className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90">
+              <motion.a
+                href="#waitlist"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-white shadow-[0_0_0_0_rgba(4,120,87,0.35)] transition hover:brightness-95 dark:text-[#0b0b0d]"
+              >
+                <span className="relative">
+                  Apply for pilot
+                  <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-0 bg-current transition group-hover:scale-x-100" />
+                </span>
+                <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}>
+                  <ArrowRight className="h-4 w-4" />
+                </motion.span>
+              </motion.a>
+              <motion.a href="#demo" whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }} className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90">
                 See workflow
-              </a>
+              </motion.a>
             </div>
 
             <p className="mt-4 text-xs text-text-muted">Pilot decisions are communicated within 72 hours.</p>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }}>
-            <Card className="depth-3d-soft rounded-2xl border border-border bg-card-bg p-4 sm:p-5">
+            <Card className="depth-3d-soft rounded-none border-x-0 border-y border-border bg-card-bg p-4 sm:rounded-2xl sm:border sm:p-5">
               <div className="flex items-center justify-between gap-2">
                 <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">Proof snapshot</p>
                 <span className="inline-flex items-center gap-1 rounded-full border border-border bg-app-bg px-2 py-0.5 text-[11px] font-medium text-brand-accent">
@@ -128,10 +146,10 @@ export default function WaitlistLanding() {
 
       <Section id="demo" className="pt-2">
         <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
-          <Card className="rounded-2xl border border-border p-3 sm:p-4">
+          <Card className="rounded-none border-x-0 border-y border-border p-3 sm:rounded-2xl sm:border sm:p-4">
             <LiveChatPreview />
           </Card>
-          <Card className="rounded-2xl border border-border p-5 sm:p-6">
+          <Card className="rounded-none border-x-0 border-y border-border p-5 sm:rounded-2xl sm:border sm:p-6">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-2.5 py-1 text-xs font-medium text-brand-accent">
               <ShieldCheck className="h-3.5 w-3.5" /> Trust posture
             </p>
@@ -152,7 +170,7 @@ export default function WaitlistLanding() {
 
       <Section id="waitlist" className="pb-8 pt-4">
         <div className="grid gap-5 lg:grid-cols-[1fr_1.05fr]">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-2xl border border-border bg-card-bg p-5 sm:p-6">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-none border-x-0 border-y border-border bg-card-bg p-5 sm:rounded-2xl sm:border sm:p-6">
             <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">Apply for pilot access</h2>
             <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">
               We prioritize operators with active order volume and measurable payment friction. This keeps onboarding focused and results-oriented.
