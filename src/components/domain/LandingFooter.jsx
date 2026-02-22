@@ -10,10 +10,10 @@ export default function LandingFooter() {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="#" className="text-brand-accent transition duration-150 ease-out hover:underline">
+          <a href="/privacy" className="text-brand-accent transition duration-150 ease-out hover:underline">
             Privacy
           </a>
-          <a href="#" className="text-brand-accent transition duration-150 ease-out hover:underline">
+          <a href="/terms" className="text-brand-accent transition duration-150 ease-out hover:underline">
             Terms
           </a>
           <p className="text-xs sm:text-sm">© {year}</p>

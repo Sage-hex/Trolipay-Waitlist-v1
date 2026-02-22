@@ -1,11 +1,14 @@
 const WAITLIST_STORAGE_KEY = 'waitlist_submissions_v1'
 
-export function buildPayload({ intent, email, business_name, channel_interest }) {
+export function buildPayload({ intent, email, business_name, channel_interest, monthly_order_volume, primary_market, payment_failure_rate }) {
   return {
     intent,
     email: email.trim().toLowerCase(),
     business_name: business_name?.trim() || '',
     channel_interest,
+    monthly_order_volume,
+    primary_market: primary_market.trim(),
+    payment_failure_rate,
     created_at_iso: new Date().toISOString(),
     user_agent: navigator.userAgent,
     referrer: document.referrer || '',
@@ -38,6 +41,9 @@ export async function submitWaitlist(payload, hpValue) {
   formData.append('email', payload.email)
   formData.append('business_name', payload.business_name)
   formData.append('channel_interest', payload.channel_interest)
+  formData.append('monthly_order_volume', payload.monthly_order_volume)
+  formData.append('primary_market', payload.primary_market)
+  formData.append('payment_failure_rate', payload.payment_failure_rate)
   formData.append('user_agent', payload.user_agent)
   formData.append('referrer', payload.referrer)
   formData.append('page_url', payload.page_url)
