@@ -18,40 +18,38 @@ export default function LandingNavbar() {
   }, [theme])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-app-bg/90 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-        <a href="/" className="flex items-center gap-2.5">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-primary text-sm font-bold text-app-bg">T</span>
+    <header className="sticky top-0 z-40 border-b border-border bg-app-bg/95 backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2.5 sm:px-6">
+        <a href="/" className="flex items-center gap-2">
+          <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-brand-primary text-xs font-bold text-app-bg">T</span>
           <div>
-            <p className="text-sm font-semibold text-brand-primary">Trolipay</p>
-            <p className="text-[10px] uppercase tracking-wide text-text-muted">Chat commerce infrastructure</p>
+            <p className="text-sm font-semibold text-brand-primary leading-none">Trolipay</p>
+            <p className="text-[10px] uppercase tracking-wide text-text-muted leading-none mt-1">For African SMEs</p>
           </div>
         </a>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition hover:opacity-90"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-card-bg text-text transition hover:opacity-90"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-
           <button
             type="button"
             onClick={() => scrollToSection('features')}
-            className="hidden rounded-lg border border-border bg-card-bg px-3 py-2 text-xs font-medium text-text transition hover:opacity-90 sm:inline-flex"
+            className="hidden rounded-lg border border-border bg-card-bg px-3 py-1.5 text-xs font-medium text-text transition hover:opacity-90 sm:inline-flex"
           >
             Features
           </button>
-
           <button
             type="button"
             onClick={() => scrollToSection('waitlist')}
-            className="btn-gloom rounded-lg bg-brand-primary px-3 py-2 text-xs font-medium text-app-bg transition hover:opacity-95 sm:text-sm"
+            className="btn-gloom rounded-lg bg-brand-primary px-3 py-1.5 text-xs font-medium text-app-bg transition hover:opacity-95"
           >
-            Get access
+            Join waitlist
           </button>
         </div>
       </div>

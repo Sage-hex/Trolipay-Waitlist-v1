@@ -6,22 +6,23 @@ import Section from '../../components/domain/Section'
 import FeatureCard from '../../components/domain/FeatureCard'
 import TestimonialCard from '../../components/domain/TestimonialCard'
 import WaitlistForm from '../../components/domain/WaitlistForm'
+import FaqAccordion from '../../components/domain/FaqAccordion'
 import Card from '../../components/ui/Card'
 import LiveChatPreview from '../../components/domain/LiveChatPreview'
 import { scrollToSection } from '../../utils/animatedScroll'
 
 const pillars = [
   {
-    title: 'Verified payment operations',
-    description: 'Signature and amount validation ensure paid status is based on payment truth, not screenshots.',
+    title: 'What you sell in chat becomes a real order',
+    description: 'No more digging through chats. Every request becomes a trackable order with owner, status, and value.',
   },
   {
-    title: 'Deterministic totals',
-    description: 'Delivery zone rules and integer-safe calculations keep totals consistent across channels.',
+    title: 'Payments are verified, not guessed',
+    description: 'Order status changes only after real verification checks. No screenshot confusion, no fake confirmations.',
   },
   {
-    title: 'Receipt-grade trust',
-    description: 'Professional receipts and lifecycle state transitions improve customer confidence at scale.',
+    title: 'Delivery + receipts happen with consistency',
+    description: 'Deterministic pricing and clean receipts help your team look premium and reduce customer back-and-forth.',
   },
 ]
 
@@ -69,14 +70,14 @@ export default function WaitlistLanding() {
           <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
             <motion.div {...reveal}>
               <p className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-3 py-1 text-xs font-medium text-brand-accent">
-                <Sparkles className="h-3.5 w-3.5" /> Trolipay waitlist • built for high-volume African chat commerce
+                <Sparkles className="h-3.5 w-3.5" /> Trolipay • chat-commerce operating layer for African SMEs
               </p>
               <h1 className="mt-4 text-3xl font-semibold tracking-tight text-brand-primary sm:text-5xl">
-                A one-line path from chat message to verified revenue.
+                Turn WhatsApp & Telegram orders into verified, paid, deliverable commerce.
               </h1>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
-                Trolipay is the operational layer between incoming chat demand and reliable fulfillment. It standardizes payment
-                verification, delivery pricing, and receipt issuance—so your team scales without ambiguity.
+                If your team still confirms payments from screenshots and tracks orders in scattered chats, Trolipay fixes that.
+                We help you capture each order, verify each payment, apply delivery logic, and issue receipts in one reliable flow.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -134,9 +135,9 @@ export default function WaitlistLanding() {
       <Section id="features">
         <div className="mb-4 inline-flex items-center gap-2 text-brand-accent">
           <ShieldCheck className="h-4 w-4" />
-          <p className="text-sm font-medium">Why teams switch to Trolipay</p>
+          <p className="text-sm font-medium">What makes Trolipay different</p>
         </div>
-        <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Enterprise-grade outcomes for growth-stage operators</h2>
+        <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Built for teams that need trust, speed, and financial clarity</h2>
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -161,7 +162,7 @@ export default function WaitlistLanding() {
               const Icon = signal.icon
               return (
                 <div key={signal.label} className="rounded-xl border border-border bg-app-bg p-4">
-                  <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-card-bg text-brand-accent border border-border">
+                  <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-card-bg border border-border text-brand-accent">
                     <Icon className="h-4 w-4" />
                   </div>
                   <p className="mt-3 text-xs uppercase tracking-wide text-text-muted">{signal.label}</p>
@@ -179,6 +180,26 @@ export default function WaitlistLanding() {
           {testimonials.map((item) => (
             <TestimonialCard key={item.role} quote={item.quote} role={item.role} />
           ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="grid gap-5 lg:grid-cols-[1fr_1.05fr]">
+          <Card className="p-5 sm:p-6">
+            <h2 className="text-xl font-semibold text-brand-primary sm:text-2xl">Frequently asked questions</h2>
+            <p className="mt-2 text-sm text-text-muted">Short answers about setup, verification, and rollout.</p>
+            <div className="mt-5">
+              <FaqAccordion />
+            </div>
+          </Card>
+
+          <Card className="p-5 sm:p-6">
+            <h2 className="text-xl font-semibold text-brand-primary sm:text-2xl">Book a live product walkthrough</h2>
+            <p className="mt-2 text-sm text-text-muted">See how chat demand becomes verified revenue in one session.</p>
+            <div className="mt-5">
+              <WaitlistForm intent="demo" />
+            </div>
+          </Card>
         </div>
       </Section>
 
