@@ -72,64 +72,62 @@ export default function WaitlistLanding() {
       <LandingNavbar />
 
       <Section className="pt-8 sm:pt-12">
-        <div className="surface-grid overflow-hidden rounded-3xl border border-border bg-card-bg">
-          <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[1.06fr_0.94fr]">
-            <motion.div {...reveal}>
-              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-3 py-1 text-xs font-medium text-brand-accent">
-                <Sparkles className="h-3.5 w-3.5" /> Trolipay waitlist • built for African chat-commerce operators
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <motion.div {...reveal}>
+            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-brand-accent">
+              <Sparkles className="h-3.5 w-3.5" /> Trolipay • premium commerce operations for African SMEs
+            </p>
+
+            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-brand-primary sm:text-5xl">
+              Stop guessing in chat. Run verified commerce with confidence.
+            </h1>
+
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
+              Trolipay helps you turn WhatsApp and Telegram demand into structured, payable, and auditable orders.
+              Your team gets payment truth, deterministic delivery totals, and receipt-backed trust in one flow.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => scrollToSection('waitlist')}
+                className="btn-gloom inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-app-bg transition hover:opacity-95"
+              >
+                Join waitlist <ArrowRight className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToSection('demo')}
+                className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90"
+              >
+                See live demo
+              </button>
+            </div>
+
+            <div className="mt-6 grid gap-2 sm:grid-cols-3">
+              {[
+                'Reduce payment disputes',
+                'Fulfill faster with clear status',
+                'Give finance + ops one source of truth',
+              ].map((item) => (
+                <div key={item} className="rounded-xl border border-border bg-card-bg p-3">
+                  <p className="inline-flex items-start gap-2 text-xs leading-relaxed text-text">
+                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-accent" /> {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div {...reveal} id="waitlist" className="rounded-2xl border border-border bg-card-bg p-3 sm:p-4">
+            <div className="mb-4 flex items-center justify-between gap-2 rounded-xl border border-border bg-app-bg px-3 py-2">
+              <p className="inline-flex items-center gap-2 text-xs font-medium text-brand-accent">
+                <Zap className="h-3.5 w-3.5" /> Early access onboarding
               </p>
-
-              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-brand-primary sm:text-5xl">
-                Stop guessing in chat. Run verified commerce with confidence.
-              </h1>
-
-              <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
-                Trolipay helps you turn WhatsApp and Telegram demand into structured, payable, and auditable orders.
-                Your team gets payment truth, deterministic delivery totals, and receipt-backed trust in one flow.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  onClick={() => scrollToSection('waitlist')}
-                  className="btn-gloom inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-app-bg transition hover:opacity-95"
-                >
-                  Join waitlist <ArrowRight className="h-4 w-4" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollToSection('demo')}
-                  className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90"
-                >
-                  See live demo
-                </button>
-              </div>
-
-              <div className="mt-6 grid gap-2 sm:grid-cols-3">
-                {[
-                  'Reduce payment disputes',
-                  'Fulfill faster with clear status',
-                  'Give finance + ops one source of truth',
-                ].map((item) => (
-                  <div key={item} className="rounded-xl border border-border bg-card-bg p-3">
-                    <p className="inline-flex items-start gap-2 text-xs leading-relaxed text-text">
-                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-accent" /> {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div {...reveal} id="waitlist" className="rounded-2xl border border-border bg-card-bg p-3 sm:p-4">
-              <div className="mb-4 flex items-center justify-between gap-2 rounded-xl border border-border bg-app-bg px-3 py-2">
-                <p className="inline-flex items-center gap-2 text-xs font-medium text-brand-accent">
-                  <Zap className="h-3.5 w-3.5" /> Early access onboarding
-                </p>
-                <span className="text-xs text-text-muted">Private beta</span>
-              </div>
-              <WaitlistForm intent="waitlist" />
-            </motion.div>
-          </div>
+              <span className="text-xs text-text-muted">Private beta</span>
+            </div>
+            <WaitlistForm intent="waitlist" />
+          </motion.div>
         </div>
       </Section>
 

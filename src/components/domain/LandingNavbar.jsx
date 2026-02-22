@@ -19,16 +19,16 @@ export default function LandingNavbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-app-bg/92 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-2.5 sm:px-6">
-        <a href="/" className="flex items-center gap-2.5">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-primary text-xs font-bold text-app-bg">T</span>
-          <div>
-            <p className="text-sm font-semibold leading-none text-brand-primary">Trolipay</p>
-            <p className="mt-1 text-[10px] uppercase tracking-wide text-text-muted">Verified chat commerce</p>
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <a href="/" className="flex min-w-0 items-center gap-2.5">
+          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-primary text-xs font-bold text-app-bg">T</span>
+          <div className="min-w-0">
+            <p className="truncate text-sm font-semibold leading-none text-brand-primary">Trolipay</p>
+            <p className="mt-1 truncate text-[10px] uppercase tracking-wide text-text-muted">Verified chat commerce</p>
           </div>
         </a>
 
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
             onClick={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
