@@ -12,23 +12,23 @@ import { scrollToSection } from '../../utils/animatedScroll'
 
 const pillars = [
   {
-    title: 'Revenue operations clarity',
-    description: 'Every chat order becomes a structured object your team can price, verify, and fulfill confidently.',
+    title: 'Verified payment operations',
+    description: 'Signature and amount validation ensure paid status is based on payment truth, not screenshots.',
   },
   {
-    title: 'Payment truth at every step',
-    description: 'Order status changes happen only after verification checks—not screenshots or assumptions.',
+    title: 'Deterministic totals',
+    description: 'Delivery zone rules and integer-safe calculations keep totals consistent across channels.',
   },
   {
-    title: 'Premium post-payment trust',
-    description: 'Receipts, delivery tracking, and lifecycle events improve customer confidence and internal accountability.',
+    title: 'Receipt-grade trust',
+    description: 'Professional receipts and lifecycle state transitions improve customer confidence at scale.',
   },
 ]
 
 const outcomes = [
-  'Reduce payment disputes and screenshot fraud risk.',
-  'Increase fulfillment speed with deterministic totals.',
-  'Give ops, finance, and support one shared source of truth.',
+  'Reduce payment disputes and fraud risk.',
+  'Increase fulfillment speed across teams.',
+  'Give ops + finance one shared source of truth.',
 ]
 
 const testimonials = [
@@ -37,11 +37,11 @@ const testimonials = [
     role: 'Operations Manager, Retail Scale-up',
   },
   {
-    quote: 'Our team now trusts the order timeline because payment state is objectively verified.',
+    quote: 'Our team now trusts every order timeline because payment state is objectively verified.',
     role: 'Founder, Social Commerce Brand',
   },
   {
-    quote: 'Receipts and delivery logic helped us look far more professional to customers.',
+    quote: 'Receipts and delivery logic helped us look far more premium to customers.',
     role: 'Customer Success Lead, D2C Team',
   },
 ]
@@ -59,56 +59,58 @@ export default function WaitlistLanding() {
       <LandingNavbar />
 
       <Section className="pt-8 sm:pt-12">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <motion.div {...reveal}>
-            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-xs font-medium text-brand-accent">
-              <Sparkles className="h-3.5 w-3.5" /> Built for African businesses running high-volume chat orders
-            </p>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-brand-primary sm:text-5xl">
-              A one-line path from chat message to verified revenue.
-            </h1>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
-              Trolipay is the operational layer between incoming chat demand and reliable fulfillment. It standardizes payment
-              verification, delivery pricing, and receipt issuance—so teams move faster with less ambiguity.
-            </p>
-
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button
-                type="button"
-                onClick={() => scrollToSection('waitlist')}
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-app-bg transition hover:opacity-95"
-              >
-                Join waitlist <ArrowRight className="h-4 w-4" />
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollToSection('demo')}
-                className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90"
-              >
-                See live flow
-              </button>
-            </div>
-
-            <div className="mt-6 grid gap-2 sm:grid-cols-3">
-              {outcomes.map((item) => (
-                <div key={item} className="rounded-xl border border-border bg-card-bg p-3">
-                  <p className="inline-flex items-start gap-2 text-xs leading-relaxed text-text">
-                    <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-accent" /> {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div {...reveal} id="waitlist" className="rounded-2xl border border-border bg-card-bg p-3 sm:p-4">
-            <div className="mb-4 flex items-center justify-between gap-2 rounded-xl border border-border bg-app-bg px-3 py-2">
-              <p className="inline-flex items-center gap-2 text-xs font-medium text-brand-accent">
-                <Zap className="h-3.5 w-3.5" /> Early access onboarding
+        <div className="surface-grid overflow-hidden rounded-3xl border border-border bg-card-bg">
+          <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+            <motion.div {...reveal}>
+              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-app-bg px-3 py-1 text-xs font-medium text-brand-accent">
+                <Sparkles className="h-3.5 w-3.5" /> Trolipay waitlist • built for high-volume African chat commerce
               </p>
-              <span className="text-xs text-text-muted">Private beta</span>
-            </div>
-            <WaitlistForm intent="waitlist" />
-          </motion.div>
+              <h1 className="mt-4 text-3xl font-semibold tracking-tight text-brand-primary sm:text-5xl">
+                A one-line path from chat message to verified revenue.
+              </h1>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-muted sm:text-base">
+                Trolipay is the operational layer between incoming chat demand and reliable fulfillment. It standardizes payment
+                verification, delivery pricing, and receipt issuance—so your team scales without ambiguity.
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('waitlist')}
+                  className="btn-gloom inline-flex items-center gap-2 rounded-lg bg-brand-primary px-4 py-2 text-sm font-medium text-app-bg transition hover:opacity-95"
+                >
+                  Join waitlist <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection('demo')}
+                  className="rounded-lg border border-border bg-card-bg px-4 py-2 text-sm font-medium text-text transition hover:opacity-90"
+                >
+                  See live flow
+                </button>
+              </div>
+
+              <div className="mt-6 grid gap-2 sm:grid-cols-3">
+                {outcomes.map((item) => (
+                  <div key={item} className="rounded-xl border border-border bg-card-bg p-3">
+                    <p className="inline-flex items-start gap-2 text-xs leading-relaxed text-text">
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-accent" /> {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div {...reveal} id="waitlist" className="rounded-2xl border border-border bg-card-bg p-3 sm:p-4">
+              <div className="mb-4 flex items-center justify-between gap-2 rounded-xl border border-border bg-app-bg px-3 py-2">
+                <p className="inline-flex items-center gap-2 text-xs font-medium text-brand-accent">
+                  <Zap className="h-3.5 w-3.5" /> Early access onboarding
+                </p>
+                <span className="text-xs text-text-muted">Private beta</span>
+              </div>
+              <WaitlistForm intent="waitlist" />
+            </motion.div>
+          </div>
         </div>
       </Section>
 
@@ -128,7 +130,7 @@ export default function WaitlistLanding() {
           <ShieldCheck className="h-4 w-4" />
           <p className="text-sm font-medium">Why teams switch to Trolipay</p>
         </div>
-        <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Designed for growth-stage commerce operators</h2>
+        <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Enterprise-grade outcomes for growth-stage operators</h2>
         <motion.div
           initial="hidden"
           whileInView="show"

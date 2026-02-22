@@ -49,7 +49,7 @@ export default function LandingNavbar() {
           <button
             type="button"
             onClick={() => scrollToSection('waitlist')}
-            className="rounded-lg bg-brand-primary px-3 py-2 text-xs font-medium text-app-bg transition hover:opacity-95 sm:text-sm"
+            className="btn-gloom rounded-lg bg-brand-primary px-3 py-2 text-xs font-medium text-app-bg transition hover:opacity-95 sm:text-sm"
           >
             Get access
           </button>
