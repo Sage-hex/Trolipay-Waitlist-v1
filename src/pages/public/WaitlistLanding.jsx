@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion'
+<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-dn1vmp
+import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, TrendingUp, Wallet, Workflow, Zap } from 'lucide-react'
+=======
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Zap } from 'lucide-react'
+>>>>>>> main
 import LandingNavbar from '../../components/domain/LandingNavbar'
 import LandingFooter from '../../components/domain/LandingFooter'
 import Section from '../../components/domain/Section'
@@ -25,6 +29,15 @@ const pillars = [
   },
 ]
 
+<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-dn1vmp
+const investorSignals = [
+  { icon: TrendingUp, label: 'Conversion integrity', value: 'Higher paid-order confidence' },
+  { icon: Wallet, label: 'Revenue certainty', value: 'Reduced disputed settlements' },
+  { icon: Workflow, label: 'Operational velocity', value: 'Faster order-to-fulfillment cycle' },
+]
+
+=======
+>>>>>>> main
 const outcomes = [
   'Reduce payment disputes and fraud risk.',
   'Increase fulfillment speed across teams.',
@@ -147,6 +160,30 @@ export default function WaitlistLanding() {
       </Section>
 
       <Section>
+<<<<<<< codex/scaffold-vite-react-app-with-tailwind-css-dn1vmp
+        <div className="rounded-2xl border border-border bg-card-bg p-5 sm:p-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Investor confidence signals</h2>
+          <p className="mt-2 text-sm text-text-muted">Operational leverage that compounds with transaction volume.</p>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {investorSignals.map((signal) => {
+              const Icon = signal.icon
+              return (
+                <div key={signal.label} className="rounded-xl border border-border bg-app-bg p-4">
+                  <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-card-bg text-brand-accent border border-border">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                  <p className="mt-3 text-xs uppercase tracking-wide text-text-muted">{signal.label}</p>
+                  <p className="mt-1 text-sm font-medium text-brand-primary">{signal.value}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+=======
+>>>>>>> main
         <h2 className="text-2xl font-semibold tracking-tight text-brand-primary sm:text-3xl">Loved by operations-focused teams</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {testimonials.map((item) => (
