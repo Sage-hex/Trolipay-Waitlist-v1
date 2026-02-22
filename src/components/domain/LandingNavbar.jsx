@@ -47,16 +47,22 @@ export default function LandingNavbar() {
           </button>
 
           <a
+            href="#waitlist"
+            className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-white transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:text-[#0b0b0d] sm:px-4 sm:py-2 sm:text-sm"
+          >
+            Join waitlist
+          </a>
+          <a
             href="#demo"
             className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
             Demo
           </a>
           <a
-            href="/auth/login"
-            className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-[#0b0b0d] transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            href="/faq"
+            className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
           >
-            Login
+            FAQ
           </a>
         </div>
       </div>

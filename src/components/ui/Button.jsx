@@ -1,6 +1,6 @@
 const variants = {
   primary:
-    'bg-brand-accent text-[#0b0b0d] hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg',
+    'bg-brand-accent text-white hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:text-[#0b0b0d]',
   secondary:
     'bg-card-bg border border-border text-text hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg',
 }

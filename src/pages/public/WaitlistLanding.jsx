@@ -22,6 +22,18 @@ const bullets = [
   'Gives ops teams one auditable source of truth.',
 ]
 
+const trustPoints = [
+  'Webhook signature and amount matching before paid state updates.',
+  'Receipt generation immediately after payment verification.',
+  'Single timeline across chat, payment, and fulfillment events.',
+]
+
+const pilotFocus = [
+  'High weekly order volume',
+  'Clear payment failure/dispute problem',
+  'Team ready for fast onboarding',
+]
+
 function TypingHeadline() {
   const [count, setCount] = useState(0)
 
@@ -69,7 +81,7 @@ export default function WaitlistLanding() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="#waitlist" className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-[#0b0b0d] transition hover:brightness-95">
+              <a href="#waitlist" className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 dark:text-[#0b0b0d]">
                 Apply for pilot
                 <ArrowRight className="h-4 w-4" />
               </a>
@@ -125,9 +137,15 @@ export default function WaitlistLanding() {
             </p>
             <h2 className="mt-3 text-xl font-semibold text-brand-primary sm:text-2xl">Minimal stack. Maximum accountability.</h2>
             <p className="mt-2 text-sm leading-relaxed text-text-muted">
-              Payment status transitions are verification-gated, receipts are generated on paid confirmation, and teams operate from one
-              consistent order timeline.
+              Core verification controls are built into payment state transitions so operations teams can trust what they see.
             </p>
+            <div className="mt-4 grid gap-3">
+              {trustPoints.map((point) => (
+                <div key={point} className="rounded-lg border border-border bg-app-bg p-3 text-sm text-text-muted">
+                  {point}
+                </div>
+              ))}
+            </div>
           </Card>
         </div>
       </Section>
@@ -139,6 +157,14 @@ export default function WaitlistLanding() {
             <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">
               We prioritize operators with active order volume and measurable payment friction. This keeps onboarding focused and results-oriented.
             </p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-1">
+              {pilotFocus.map((item) => (
+                <p key={item} className="inline-flex items-center gap-2 rounded-lg border border-border bg-app-bg px-3 py-2 text-sm text-text-muted">
+                  <CheckCircle2 className="h-4 w-4 text-brand-accent" />
+                  {item}
+                </p>
+              ))}
+            </div>
             <div className="mt-4 rounded-xl border border-border bg-app-bg p-4 text-sm text-text-muted">Current intake cadence: monthly cohorts. Response SLA: 72 hours.</div>
           </motion.div>
 

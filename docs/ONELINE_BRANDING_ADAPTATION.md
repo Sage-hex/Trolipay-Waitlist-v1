@@ -39,3 +39,9 @@ Following the investor brutal review (proof-first, less noise, less copy bloat):
 - Less visual clutter, stronger signal density.
 - Cleaner contrast in dark mode and light mode.
 - Better conversion focus around qualification and onboarding timeline.
+
+
+## Follow-up adjustment based on feedback
+- Retained original Trolipay brand colors in **light mode** (`#0f172a` primary, `#047857` accent).
+- Kept Oneline-inspired palette for **dark mode** (dark surfaces + `#7ec88b` accent) for better night contrast.
+- Added a top navigation **Join waitlist** CTA button and moved FAQ into a dedicated page (`/faq`).
