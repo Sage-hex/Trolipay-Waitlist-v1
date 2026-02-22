@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #0f172a;
+  --color-brand-accent: #047857;
+
+  --color-app-bg: #f8fafc;
+  --color-card-bg: #ffffff;
+  --color-border: #e5e7eb;
+
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+}
+
+:root {
+  color-scheme: light;
+  color: var(--color-text);
+  background-color: var(--color-app-bg);
+}
+
+:root.dark {
+  color-scheme: dark;
+  --color-brand-primary: #e2e8f0;
+  --color-brand-accent: #34d399;
+
+  --color-app-bg: #020617;
+  --color-card-bg: #0f172a;
+  --color-border: #1f2937;
+
+  --color-text: #e5e7eb;
+  --color-text-muted: #94a3b8;
+}
+
+* {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(4, 120, 87, 0.14), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(194, 65, 12, 0.1), transparent 34%),
+    var(--color-app-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.depth-3d {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 14px 30px rgba(15, 23, 42, 0.08),
+    0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.depth-3d-soft {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
+
+.btn-gloom {
+  position: relative;
+  box-shadow: 0 10px 24px rgba(4, 120, 87, 0.22), 0 0 0 1px rgba(4, 120, 87, 0.2) inset;
+}
+
+.btn-gloom:hover {
+  box-shadow: 0 14px 28px rgba(4, 120, 87, 0.3), 0 0 0 1px rgba(4, 120, 87, 0.3) inset;
+}
+
+.surface-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+html {
+  scroll-behavior: auto;
+}
