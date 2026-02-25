@@ -79,8 +79,9 @@ export default function WaitlistLanding() {
               <Sparkles className="h-3.5 w-3.5" /> Investor-ready commerce infrastructure for African SMEs
             </p>
 
-            <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-brand-primary sm:text-4xl md:text-5xl">
-              <TypingHeadline />
+            <h1 className="relative mt-4 text-3xl font-semibold leading-tight tracking-tight text-brand-primary sm:text-4xl md:text-5xl">
+              <span className="invisible block select-none">{heroText}</span>
+              <span className="absolute inset-0 block"><TypingHeadline /></span>
             </h1>
 
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">

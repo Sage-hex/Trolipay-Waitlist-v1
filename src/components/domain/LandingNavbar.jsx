@@ -33,7 +33,7 @@ export default function LandingNavbar() {
       <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <span className="inline-block h-7 w-7 shrink-0 rounded-lg bg-brand-accent sm:h-8 sm:w-8" />
+          <img src="/brand/trolipay-mark.svg" alt="Trolipay logo" className="h-7 w-7 shrink-0 rounded-lg sm:h-8 sm:w-8" />
           <span className="min-w-0">
             <span className="block truncate text-base font-semibold tracking-tight text-brand-primary sm:text-lg">Trolipay</span>
             <span className="block truncate text-[10px] uppercase tracking-wide text-text-muted sm:text-[11px]">Built for African SMEs</span>
