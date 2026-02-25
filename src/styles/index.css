@@ -60,3 +60,9 @@ html {
 .chat-preview-scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }
+
+
+.font-handwriting {
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", "Snell Roundhand", cursive;
+  letter-spacing: 0.2px;
+}

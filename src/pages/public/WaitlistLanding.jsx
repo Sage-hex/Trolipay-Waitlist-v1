@@ -73,7 +73,7 @@ export default function WaitlistLanding() {
       <LandingNavbar />
 
       <Section className="pb-6 pt-8 sm:pt-12">
-        <div className="grid gap-6 lg:grid-cols-[1fr_1.05fr] lg:gap-10">
+        <div className="grid gap-7 lg:grid-cols-[1fr_1.05fr] lg:gap-10">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-card-bg px-3 py-1 text-[11px] font-medium text-brand-accent sm:text-xs">
               <Sparkles className="h-3.5 w-3.5" /> Investor-ready commerce infrastructure for African SMEs
@@ -144,8 +144,8 @@ export default function WaitlistLanding() {
         </div>
       </Section>
 
-      <Section id="demo" className="pt-2">
-        <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
+      <Section id="demo" className="pt-3">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
           <Card className="rounded-2xl border border-border p-3 sm:p-4">
             <LiveChatPreview />
           </Card>
@@ -168,8 +168,8 @@ export default function WaitlistLanding() {
         </div>
       </Section>
 
-      <Section id="waitlist" className="pb-8 pt-4">
-        <div className="grid gap-5 lg:grid-cols-[1fr_1.05fr]">
+      <Section id="waitlist" className="pb-8 pt-5">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} className="rounded-2xl border border-border bg-card-bg p-5 sm:p-6">
             <h2 className="text-2xl font-semibold text-brand-primary sm:text-3xl">Apply for pilot access</h2>
             <p className="mt-3 text-sm leading-relaxed text-text-muted sm:text-base">

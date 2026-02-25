@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, Moon, Sun, X } from 'lucide-react'
 
 function getInitialTheme() {
@@ -31,13 +32,13 @@ export default function LandingNavbar() {
     <header className="sticky top-0 z-30 border-b border-border bg-app-bg/95 backdrop-blur-sm">
       <div className="pointer-events-none h-1 w-full bg-gradient-to-r from-[#C2410C] via-brand-accent to-[#CA8A04]" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
-        <a href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
+        <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
           <span className="inline-block h-7 w-7 shrink-0 rounded-lg bg-brand-accent sm:h-8 sm:w-8" />
           <span className="min-w-0">
             <span className="block truncate text-base font-semibold tracking-tight text-brand-primary sm:text-lg">Trolipay</span>
             <span className="block truncate text-[10px] uppercase tracking-wide text-text-muted sm:text-[11px]">Built for African SMEs</span>
           </span>
-        </a>
+        </Link>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <button
@@ -51,23 +52,29 @@ export default function LandingNavbar() {
 
           <div className="hidden items-center gap-2 sm:flex sm:gap-3">
             <a
-              href="#waitlist"
+              href="/#waitlist"
               className="rounded-lg bg-brand-accent px-2.5 py-1.5 text-xs font-semibold text-white transition duration-150 ease-out hover:brightness-95 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg dark:text-[#0b0b0d] sm:px-4 sm:py-2 sm:text-sm"
             >
               Join waitlist
             </a>
             <a
-              href="#demo"
+              href="/#demo"
               className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
             >
               Demo
             </a>
-            <a
-              href="/faq"
+            <Link
+              to="/about"
+              className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
+            >
+              About
+            </Link>
+            <Link
+              to="/faq"
               className="rounded-lg border border-border bg-card-bg px-2.5 py-1.5 text-xs font-medium text-text transition duration-150 ease-out hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-app-bg sm:px-4 sm:py-2 sm:text-sm"
             >
               FAQ
-            </a>
+            </Link>
           </div>
 
           <button
@@ -81,13 +88,13 @@ export default function LandingNavbar() {
         </div>
       </div>
 
-
       {isMenuOpen ? (
         <div className="border-t border-border bg-card-bg px-4 py-3 sm:hidden">
           <div className="grid gap-2">
-            <a href="#waitlist" onClick={closeMenu} className="rounded-lg bg-brand-accent px-3 py-2 text-sm font-semibold text-white dark:text-[#0b0b0d]">Join waitlist</a>
-            <a href="#demo" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">Demo</a>
-            <a href="/faq" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">FAQ</a>
+            <a href="/#waitlist" onClick={closeMenu} className="rounded-lg bg-brand-accent px-3 py-2 text-sm font-semibold text-white dark:text-[#0b0b0d]">Join waitlist</a>
+            <a href="/#demo" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">Demo</a>
+            <Link to="/about" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">About</Link>
+            <Link to="/faq" onClick={closeMenu} className="rounded-lg border border-border bg-app-bg px-3 py-2 text-sm font-medium text-text">FAQ</Link>
           </div>
         </div>
       ) : null}
